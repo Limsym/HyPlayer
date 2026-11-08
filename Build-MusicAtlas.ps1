@@ -1,4 +1,4 @@
-param([string]$Version='2.1.38.6042',[string]$SdkVersion='10.0.26100.0')
+param([string]$Version='2.1.38.6043',[string]$SdkVersion='10.0.26100.0')
 $ErrorActionPreference='Stop'
 $vswhere=Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio/Installer/vswhere.exe'
 if(!(Test-Path -LiteralPath $vswhere)){throw 'Install Visual Studio Build Tools with MSBuild, UWP/.NET Native and Windows SDK.'}

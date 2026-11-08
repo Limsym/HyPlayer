@@ -3,6 +3,16 @@ module.exports=function(html){
  const original=fs.readFileSync('music_atlas_v3.html','utf8');
  const expression=original.slice(original.indexOf('const definitions=')+18,original.indexOf('const palette=')).trim().replace(/;$/,'');
  const legacy=vm.runInNewContext(expression);
+ const moodCuration=JSON.parse(fs.readFileSync('../MusicAtlasData/mood-curation.json','utf8'));
+ const runtime=fs.readFileSync('atlas-dimensions-runtime.js','utf8');
+ const providerMoods=vm.runInNewContext(runtime.match(/^const moodNames=(\[.*\]);$/m)[1]);
+ if(moodCuration.schema!==1||!Array.isArray(moodCuration.categories)||!moodCuration.tracks||Array.isArray(moodCuration.tracks)||typeof moodCuration.tracks!=='object')throw Error('Invalid mood curation document');
+ const categoryIds=new Set();
+ for(const c of moodCuration.categories){if(!['m-energy','m-sacred'].includes(c.id)||c.dim!=='mood'||typeof c.name!=='string'||typeof c.color!=='string'||categoryIds.has(c.id))throw Error('Invalid or duplicated shared mood category');categoryIds.add(c.id)}
+ const moodIds=new Set([...providerMoods.map(name=>'mood:'+name),...categoryIds]);
+ for(const [id,c] of Object.entries(moodCuration.tracks)){
+  if(!/^ncm-song-\d+$/.test(id)||!c||!Array.isArray(c.add)||!Array.isArray(c.remove)||!c.add.concat(c.remove).every(tag=>moodIds.has(tag))||c.add.some(tag=>c.remove.includes(tag))||typeof c.title!=='string'||typeof c.artist!=='string'||typeof c.reason!=='string'||!c.reason.trim())throw Error('Invalid shared mood correction: '+id);
+ }
  const dims=[{id:'genre',name:'曲风',color:'#5888a3'},{id:'mood',name:'气质',color:'#a77cba'},{id:'source',name:'来源',color:'#b58b55'}];
  html=html.replace(/const dimensions=.*?;\r?\n/,'const dimensions='+JSON.stringify(dims)+';\n');
  const end=html.indexOf('const palette=');
@@ -29,7 +39,7 @@ module.exports=function(html){
  html=html.replace('「其它」只包含没有有效分类的歌曲；取消主页勾选不会取消歌曲的分类。其它方块计入地图面积，但不会参与系统推荐选择。','“其它类别”合并折叠标签的票数，歌曲列表去重；“未分类”表示当前维度没有标签。系统推荐按已分类票数累计达到 90% 展开，有歌曲的类别不超过 10 个则全部展开。');
  html=html.replace('</style>','\n.dimension-panel{padding:16px 20px;margin-bottom:16px}.dimension-panel .actions{margin:0}.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.filter-row strong{min-width:45px;padding:6px 0}.dimension-tab[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}.dimension-panel summary{padding:8px 0}.dimension-panel .hint{margin:8px 0}.editor-row .btn{font-size:11px;padding:5px 8px}\n</style>');
  const anchor="for(const id of ['importData','importAudio'])";
- html=html.replace(anchor,legacyFn+'\n'+fs.readFileSync('atlas-dimensions-runtime.js','utf8')+'\n'+fs.readFileSync('atlas-editor-runtime.js','utf8')+'\n'+anchor);
+ html=html.replace(anchor,legacyFn+'\nconst moodCuration='+JSON.stringify(moodCuration).replaceAll('<','\\u003c')+';\n'+runtime+'\n'+fs.readFileSync('atlas-editor-runtime.js','utf8')+'\n'+anchor);
  html=html.replace("genreState:t.genreState||'pending'", "genreState:t.genreState||'pending',emotions:Array.isArray(t.emotions)?t.emotions.filter(s=>typeof s==='string'):[],emotionState:t.emotionState||'pending'");
  html=html.replace("t.genreState=u.genreState", "t.genreState=u.genreState;t.emotions=Array.isArray(u.emotions)?u.emotions:[];t.emotionState=u.emotionState||'pending'");
  html=html.replace("if(m.type==='playlist'){", "if(m.type==='configuration'){applyHostState(m.state);return}if(m.type==='playlist'){editorOnly=!!m.editor;document.body.classList.toggle('editor-only',editorOnly);");

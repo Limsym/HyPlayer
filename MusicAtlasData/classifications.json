@@ -1682,6 +1682,10 @@
     "nc:电子",
     "nc:二次元",
     "nc:嘻哈说唱",
+    "nc:中国传统特色",
+    "nc:金属",
+    "nc:另类/独立",
+    "nc:世界音乐",
     "mood:放松",
     "mood:治愈",
     "mood:悲伤",
@@ -1693,6 +1697,10 @@
     "mood:欢快",
     "mood:苦情",
     "mood:狂欢",
+    "mood:热血励志",
+    "mood:自信",
+    "mood:抑郁",
+    "mood:甜蜜",
     "s-screen",
     "s-game",
     "s-live",
@@ -1990,12 +1998,19 @@
       ],
       "mood": [],
       "source": []
+    },
+    "ncm-song-31370542": {
+      "mood": [
+        "mood:浪漫",
+        "mood:孤独",
+        "m-energy"
+      ]
     }
   },
   "activeDim": "mood",
   "expansion": {
-    "genre": "auto",
-    "mood": "auto",
+    "genre": "custom",
+    "mood": "custom",
     "source": "auto"
   }
 }

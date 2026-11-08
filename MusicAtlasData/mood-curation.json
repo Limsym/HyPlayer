@@ -1,0 +1,729 @@
+{
+  "schema": 1,
+  "revision": "2026-11-08.1",
+  "method": "逐曲人工判断，依据已知作品、具体录音元数据及缓存标签；本轮未逐首试听、未做音频分析。仅匹配列明歌曲 ID，用户同维度修改（包括清空）优先。",
+  "categories": [
+    {
+      "color": "#bd715a",
+      "defaultHome": false,
+      "dim": "mood",
+      "id": "m-energy",
+      "name": "热烈 / 昂扬"
+    },
+    {
+      "color": "#948b63",
+      "defaultHome": false,
+      "dim": "mood",
+      "id": "m-sacred",
+      "name": "神圣 / 仪式"
+    }
+  ],
+  "tracks": {
+    "ncm-song-31654455": {
+      "title": "Victory",
+      "artist": "Two Steps From Hell / Thomas Bergersen",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "壮阔旋律、合唱高潮和坚定的推进，明确胜利感；平台当前只有用途标签。",
+      "reviewedProviderMoods": []
+    },
+    "ncm-song-437292121": {
+      "title": "Sogno di Volare (“The Dream of Flight”)",
+      "artist": "Angel City Chorale / Christopher Tin",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "文明六主题曲的合唱与管弦呈现向上开拓和飞翔感；与平台热血励志一致。",
+      "reviewedProviderMoods": [
+        "热血励志"
+      ]
+    },
+    "ncm-song-64800": {
+      "title": "男儿当自强",
+      "artist": "成龙",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "鼓舞性的主题、有力节奏与成龙的演唱，适合昂扬入口。",
+      "reviewedProviderMoods": [
+        "热血励志"
+      ]
+    },
+    "ncm-song-92428": {
+      "title": "男儿当自强",
+      "artist": "林子祥",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "林子祥版本以高亢、有力的演唱呈现鼓舞感；与另一录音单独记录。",
+      "reviewedProviderMoods": [
+        "热血励志"
+      ]
+    },
+    "ncm-song-355992": {
+      "title": "追梦赤子心",
+      "artist": "GALA",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "GALA 的坚定奋进主题和爆发式演唱，主导气质明确昂扬。",
+      "reviewedProviderMoods": [
+        "活力",
+        "平静",
+        "热血励志"
+      ]
+    },
+    "ncm-song-1899989255": {
+      "title": "天地龙鳞",
+      "artist": "王力宏",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "雄健推进和高昂副歌，平台活力、热血励志可以保留。",
+      "reviewedProviderMoods": [
+        "活力",
+        "热血励志"
+      ]
+    },
+    "ncm-song-346576": {
+      "title": "光辉岁月",
+      "artist": "Beyond",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "反抗困境、坚持理想的表达与宽阔副歌，适合精神向上入口。",
+      "reviewedProviderMoods": [
+        "治愈",
+        "热血励志",
+        "自信"
+      ]
+    },
+    "ncm-song-347597": {
+      "title": "不再犹豫",
+      "artist": "Beyond",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "主动奋进的主题和强劲节奏；平台热血励志、自信支持此判断。",
+      "reviewedProviderMoods": [
+        "活力",
+        "狂欢",
+        "热血励志",
+        "自信"
+      ]
+    },
+    "ncm-song-386175": {
+      "title": "倔强",
+      "artist": "五月天",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "坚持自我、拒绝放弃的主题和逐渐增强的副歌。",
+      "reviewedProviderMoods": [
+        "思念",
+        "平静",
+        "欢快",
+        "热血励志"
+      ]
+    },
+    "ncm-song-191278": {
+      "title": "最美的太阳",
+      "artist": "张杰",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "鼓舞性的歌词和明亮有力的演唱；平台已给热血励志、自信。",
+      "reviewedProviderMoods": [
+        "活力",
+        "热血励志",
+        "自信"
+      ]
+    },
+    "ncm-song-34280713": {
+      "title": "万里长城永不倒",
+      "artist": "罗文",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "有力、振奋的武侠主题歌表达，平台也标热血励志。",
+      "reviewedProviderMoods": [
+        "热血励志"
+      ]
+    },
+    "ncm-song-1943043408": {
+      "title": "篇章",
+      "artist": "张韶涵 / 王赫野",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "以向前、重新出发为主旨的鼓舞演唱；保留原热血励志和自信。",
+      "reviewedProviderMoods": [
+        "热血励志",
+        "自信"
+      ]
+    },
+    "ncm-song-347319": {
+      "title": "海阔天空 (大马版28/05/93) (Live)",
+      "artist": "Beyond",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "已知 Beyond 海阔天空现场版本，克服困境的主题和合唱式高潮。",
+      "reviewedProviderMoods": [
+        "热血励志",
+        "自信"
+      ]
+    },
+    "ncm-song-347230": {
+      "title": "海阔天空",
+      "artist": "Beyond",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Beyond 海阔天空原专辑版的自由、坚持与向上表达；悲伤可并存。",
+      "reviewedProviderMoods": [
+        "治愈",
+        "悲伤",
+        "自信"
+      ]
+    },
+    "ncm-song-28875146": {
+      "title": "海阔天空 (Live)",
+      "artist": "Beyond",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Beyond 海阔天空 2005 现场的集体合唱与鼓舞感，原热血励志、自信可保留。",
+      "reviewedProviderMoods": [
+        "热血励志",
+        "自信"
+      ]
+    },
+    "ncm-song-3950444": {
+      "title": "It's My Life",
+      "artist": "Bon Jovi",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Bon Jovi 主打录音以坚定、自我主张的副歌和摇滚推进产生昂扬感。",
+      "reviewedProviderMoods": [
+        "活力",
+        "狂欢"
+      ]
+    },
+    "ncm-song-3950546": {
+      "title": "It's My Life",
+      "artist": "Bon Jovi",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "同一已知歌曲的另一专辑收录 ID；强劲、自我主张的主导气质不变。",
+      "reviewedProviderMoods": [
+        "狂欢",
+        "欢快"
+      ]
+    },
+    "ncm-song-1868480": {
+      "title": "We Are the Champions",
+      "artist": "Queen",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "胜利与坚持的赞歌，副歌具有明确凯旋感。",
+      "reviewedProviderMoods": [
+        "狂欢",
+        "放松",
+        "热血励志"
+      ]
+    },
+    "ncm-song-26857076": {
+      "title": "The Show Must Go On",
+      "artist": "Queen",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "在困难中继续前进的主题与高亢演唱，适合昂扬入口。",
+      "reviewedProviderMoods": [
+        "活力",
+        "狂欢"
+      ]
+    },
+    "ncm-song-17646724": {
+      "title": "The Final Countdown",
+      "artist": "Europe",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "鲜明号角式合成器旋律和推进感，形成向前和出发的听感。",
+      "reviewedProviderMoods": [
+        "思念",
+        "活力"
+      ]
+    },
+    "ncm-song-26624703": {
+      "title": "Hall of Fame",
+      "artist": "The Script / will.i.am",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "鼓励坚持和追求成就的主题，节奏和副歌都有明确鼓舞性。",
+      "reviewedProviderMoods": [
+        "活力"
+      ]
+    },
+    "ncm-song-19542337": {
+      "title": "Hall of Fame",
+      "artist": "The Script / will.i.am",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Hall of Fame 的另一收录 ID，同一作品的鼓舞主题和向上副歌。",
+      "reviewedProviderMoods": [
+        "思念",
+        "浪漫",
+        "活力"
+      ]
+    },
+    "ncm-song-436487118": {
+      "title": "Unstoppable",
+      "artist": "Sia",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "自信、坚定的自我宣言和强烈上扬的副歌。",
+      "reviewedProviderMoods": [
+        "活力",
+        "放松",
+        "欢快",
+        "自信"
+      ]
+    },
+    "ncm-song-400876320": {
+      "title": "Unstoppable",
+      "artist": "Sia",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Unstoppable 的另一收录 ID，原活力、自信与昂扬可并存。",
+      "reviewedProviderMoods": [
+        "活力",
+        "自信"
+      ]
+    },
+    "ncm-song-29401226": {
+      "title": "Warriors",
+      "artist": "Imagine Dragons",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "奋斗与集体力量主题，密集鼓点和宏大副歌形成战斗式昂扬感。",
+      "reviewedProviderMoods": [
+        "狂欢",
+        "放松"
+      ]
+    },
+    "ncm-song-506196018": {
+      "title": "Legends Never Die",
+      "artist": "英雄联盟 / Against the Current",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "克服困境与坚韧主题，强烈递进副歌；适合昂扬，不仅是活力或狂欢。",
+      "reviewedProviderMoods": [
+        "活力",
+        "狂欢"
+      ]
+    },
+    "ncm-song-21534286": {
+      "title": "I Believe I Can Fly",
+      "artist": "R. Kelly",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "持续向上的旋律和鼓舞主题；昂扬可以是舒展的，不要求快速节拍。",
+      "reviewedProviderMoods": [
+        "平静",
+        "放松"
+      ]
+    },
+    "ncm-song-1699483": {
+      "title": "Man In The Mirror",
+      "artist": "Michael Jackson",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "呼吁个人改变的歌词与逐层增强的福音式合唱，形成鼓舞感。",
+      "reviewedProviderMoods": [
+        "浪漫",
+        "放松"
+      ]
+    },
+    "ncm-song-1698382": {
+      "title": "Man In the Mirror",
+      "artist": "Michael Jackson",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Man In the Mirror 的另一收录 ID，保留同作品明确向上的合唱推进。",
+      "reviewedProviderMoods": [
+        "活力",
+        "放松"
+      ]
+    },
+    "ncm-song-27536482": {
+      "title": "Man in the Mirror (Live At Wembley July 16, 1988)",
+      "artist": "Michael Jackson",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Wembley 现场版的持续递进、呼应和合唱使鼓舞感尤其明显。",
+      "reviewedProviderMoods": [
+        "活力"
+      ]
+    },
+    "ncm-song-21178420": {
+      "title": "Keep the Faith",
+      "artist": "Michael Jackson",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "坚持信念的鼓舞主题与福音式强劲推进。",
+      "reviewedProviderMoods": [
+        "浪漫",
+        "放松"
+      ]
+    },
+    "ncm-song-31654464": {
+      "title": "Flight Of The Silverbird",
+      "artist": "Two Steps From Hell / Thomas Bergersen",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Flight Of The Silverbird 以飞翔感旋律和强劲高潮展开，平台热血励志也支持。",
+      "reviewedProviderMoods": [
+        "狂欢",
+        "热血励志"
+      ]
+    },
+    "ncm-song-31654453": {
+      "title": "Never Back Down",
+      "artist": "Two Steps From Hell / Thomas Bergersen",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Never Back Down 的坚毅主题、合唱与管弦推进形成明确昂扬感。",
+      "reviewedProviderMoods": [
+        "活力",
+        "狂欢"
+      ]
+    },
+    "ncm-song-31654478": {
+      "title": "Star Sky",
+      "artist": "Two Steps From Hell / Thomas Bergersen",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Star Sky 从抒情到史诗高潮，昂扬与抒情或悲伤可并存；此处只补昂扬，不删除原平台情绪。",
+      "reviewedProviderMoods": [
+        "甜蜜",
+        "狂欢",
+        "悲伤"
+      ]
+    },
+    "ncm-song-491757212": {
+      "title": "Star Sky (Instrumental)",
+      "artist": "Two Steps From Hell / Thomas Bergersen",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Star Sky 纯器乐版仍有明确向上旋律和史诗高潮，单独按该录音 ID 记录。",
+      "reviewedProviderMoods": [
+        "活力"
+      ]
+    },
+    "ncm-song-512298123": {
+      "title": "Never Give up on Your Dreams",
+      "artist": "Two Steps From Hell",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Never Give up on Your Dreams 有持续向上、鼓舞性的管弦递进，不依赖歌名自动规则。",
+      "reviewedProviderMoods": []
+    },
+    "ncm-song-2070502": {
+      "title": "Conquest of Paradise",
+      "artist": "Vangelis",
+      "add": [
+        "m-energy",
+        "m-sacred"
+      ],
+      "remove": [],
+      "reason": "征服天堂的庄严、宏阔渐进和合唱营造崇高力量感；昂扬不必等于狂欢。 Conquest of Paradise 的庄严合唱、仪式性步态和崇高感，符合既有神圣 / 仪式入口的审美定义，不代表宗教身份。",
+      "reviewedProviderMoods": [
+        "狂欢"
+      ]
+    },
+    "ncm-song-3935139": {
+      "title": "Breath and Life",
+      "artist": "Audiomachine",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Breath and Life 的合唱、管弦和强推进高潮，当前仅助眠用途造成气质漏标。",
+      "reviewedProviderMoods": []
+    },
+    "ncm-song-19554998": {
+      "title": "Dragon Rider",
+      "artist": "Two Steps From Hell",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Dragon Rider 的强劲节奏、英雄式旋律和宏大推进，适合昂扬。",
+      "reviewedProviderMoods": [
+        "狂欢",
+        "自信"
+      ]
+    },
+    "ncm-song-1620506": {
+      "title": "He's a Pirate",
+      "artist": "Klaus Badelt",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "加勒比海盗原声版本的鲜明进行节奏和英勇冒险感。",
+      "reviewedProviderMoods": [
+        "活力",
+        "狂欢"
+      ]
+    },
+    "ncm-song-1427888": {
+      "title": "Up Is Down",
+      "artist": "Hans Zimmer",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Up Is Down 以活跃节奏、向上旋律和管弦推进呈现振奋的冒险感。",
+      "reviewedProviderMoods": []
+    },
+    "ncm-song-1427930": {
+      "title": "Drink Up Me Hearties",
+      "artist": "Hans Zimmer",
+      "add": [
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Drink Up Me Hearties 的主题重现与宏阔高潮呈现昂扬、冒险感。",
+      "reviewedProviderMoods": []
+    },
+    "ncm-song-406347384": {
+      "title": "'Hallelujah' (from 'Messiah')",
+      "artist": "Georg Friedrich Händel",
+      "add": [
+        "m-sacred",
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Messiah 中的辉煌赞颂合唱，同时有庄严与昂扬；区别于 Cohen 的同名歌曲。",
+      "reviewedProviderMoods": []
+    },
+    "ncm-song-412570723": {
+      "title": "Amazing Grace",
+      "artist": "Libera",
+      "add": [
+        "m-sacred"
+      ],
+      "remove": [],
+      "reason": "Libera 的赞美诗童声合唱版本，有明确虔敬、庄严气质。",
+      "reviewedProviderMoods": []
+    },
+    "ncm-song-2700746": {
+      "title": "Amazing Grace",
+      "artist": "Hayley Westenra",
+      "add": [
+        "m-sacred"
+      ],
+      "remove": [],
+      "reason": "Hayley Westenra 的赞美诗演绎澄澈、虔敬；保留平台治愈、放松。",
+      "reviewedProviderMoods": [
+        "治愈",
+        "放松"
+      ]
+    },
+    "ncm-song-16682671": {
+      "title": "Ave Maria",
+      "artist": "Chris Dodd / Connor O'Donnell / Fiona Pears / Ian Tilley / John Anderson / Libera / ROBERT PRIZEMAN / Steven Geraghty",
+      "add": [
+        "m-sacred"
+      ],
+      "remove": [],
+      "reason": "Libera 的祈祷文本、合唱和演绎共同形成神圣气质，平台只有冥想用途。",
+      "reviewedProviderMoods": []
+    },
+    "ncm-song-1461836": {
+      "title": "Serenata Immortale",
+      "artist": "Immediate Music",
+      "add": [
+        "m-sacred",
+        "m-energy"
+      ],
+      "remove": [],
+      "reason": "Serenata Immortale 的宏大合唱与管弦高潮兼有庄严和振奋听感；神圣按仪式性审美定义。",
+      "reviewedProviderMoods": [
+        "热血励志"
+      ]
+    },
+    "ncm-song-1484893": {
+      "title": "Hymn To The Sea",
+      "artist": "James Horner",
+      "add": [
+        "m-sacred"
+      ],
+      "remove": [],
+      "reason": "Hymn To The Sea 的肃穆悼念、无词人声和仪式性展开，符合庄严的听感入口，不代表欢快。",
+      "reviewedProviderMoods": []
+    },
+    "ncm-song-1427223": {
+      "title": "Théoden King / \"The Funeral of Théodred\" (feat. Miranda Otto)",
+      "artist": "Howard Shore",
+      "add": [
+        "m-sacred"
+      ],
+      "remove": [],
+      "reason": "The Funeral of Théodred 所在配乐以葬礼哀歌和仪式场景为明确上下文，适合神圣 / 仪式的庄严分支。",
+      "reviewedProviderMoods": []
+    },
+    "ncm-song-26178041": {
+      "title": "千年の祈り",
+      "artist": "姫神",
+      "add": [
+        "m-sacred"
+      ],
+      "remove": [],
+      "reason": "千年の祈り的另一精选收录 ID；结合其仪式式人声与用户对原 ID 438632 的已确认神圣选择。",
+      "reviewedProviderMoods": []
+    },
+    "ncm-song-2530151": {
+      "title": "How Can I Keep From Singing",
+      "artist": "Enya",
+      "add": [
+        "m-sacred"
+      ],
+      "remove": [],
+      "reason": "Enya 的赞美诗改编呈现平静、敬虔的声音质感；保留平台放松。",
+      "reviewedProviderMoods": [
+        "放松"
+      ]
+    },
+    "ncm-song-22605222": {
+      "title": "Creep",
+      "artist": "Radiohead",
+      "add": [
+        "mood:孤独"
+      ],
+      "remove": [
+        "mood:甜蜜",
+        "mood:欢快",
+        "mood:放松"
+      ],
+      "reason": "用户明确指出甜蜜误标；该录音以疏离、自我否定和压抑爆发为主导，保留悲伤、思念，补孤独。",
+      "reviewedProviderMoods": [
+        "甜蜜",
+        "思念",
+        "放松",
+        "欢快",
+        "悲伤"
+      ]
+    },
+    "ncm-song-4023379": {
+      "title": "Moskau",
+      "artist": "Dschinghis Khan",
+      "add": [
+        "mood:欢快",
+        "mood:狂欢"
+      ],
+      "remove": [
+        "mood:甜蜜"
+      ],
+      "reason": "Moskau 是明快、庆典式舞曲；甜蜜不足以描述其主导气质，保留活力。",
+      "reviewedProviderMoods": [
+        "甜蜜",
+        "活力"
+      ]
+    },
+    "ncm-song-18127334": {
+      "title": "Wake Me up When September Ends",
+      "artist": "Green Day",
+      "add": [
+        "mood:思念"
+      ],
+      "remove": [
+        "mood:欢快"
+      ],
+      "reason": "Wake Me up When September Ends 的哀悼、回忆主题与悲伤演绎，欢快不适合作为主导听感。",
+      "reviewedProviderMoods": [
+        "欢快",
+        "悲伤"
+      ]
+    },
+    "ncm-song-4153366": {
+      "title": "Numb",
+      "artist": "Linkin Park",
+      "add": [
+        "mood:悲伤",
+        "mood:孤独"
+      ],
+      "remove": [
+        "mood:欢快",
+        "mood:放松"
+      ],
+      "reason": "Numb 的受压迫、疏离和爆发式演唱，不能以欢快或放松概括；其它平台标签保留待后续审阅。",
+      "reviewedProviderMoods": [
+        "思念",
+        "狂欢",
+        "放松",
+        "欢快"
+      ]
+    }
+  }
+}
