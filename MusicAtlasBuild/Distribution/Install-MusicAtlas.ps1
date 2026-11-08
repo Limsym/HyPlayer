@@ -27,11 +27,22 @@ if(!$trusted){
  Import-Certificate -FilePath $certPath -CertStoreLocation Cert:\LocalMachine\TrustedPeople|Out-Null
 }
 $dependencies=@()
+function Test-MusicAtlasDependencyAvailable($Identity,$Packages){
+ $requiredArchitecture=([string]$Identity.ProcessorArchitecture).ToLowerInvariant()
+ if(!$requiredArchitecture){$requiredArchitecture='neutral'}
+ $compatible=@($Packages|Where-Object{
+  $architecture=([string]$_.Architecture).ToLowerInvariant()
+  $_.Name -eq [string]$Identity.Name -and
+  (!$Identity.Publisher -or $_.Publisher -eq [string]$Identity.Publisher) -and
+  ($architecture -eq $requiredArchitecture -or $architecture -eq 'neutral')
+ }|Sort-Object -Property @{Expression={[version]$_.Version};Descending=$true})
+ return ($compatible.Count -gt 0 -and [version]$compatible[0].Version -ge [version]$Identity.Version)
+}
 foreach($file in Get-ChildItem -LiteralPath (Join-Path $PSScriptRoot 'Dependencies') -File){
  $zip=[IO.Compression.ZipFile]::OpenRead($file.FullName)
  try{$reader=[IO.StreamReader]::new($zip.GetEntry('AppxManifest.xml').Open());[xml]$xml=$reader.ReadToEnd();$reader.Dispose()}finally{$zip.Dispose()}
- $existing=Get-AppxPackage -Name $xml.Package.Identity.Name
- if(!$existing -or [version]$existing.Version -lt [version]$xml.Package.Identity.Version){$dependencies+=$file.FullName}
+ $existing=@(Get-AppxPackage -Name $xml.Package.Identity.Name)
+ if(!(Test-MusicAtlasDependencyAvailable $xml.Package.Identity $existing)){$dependencies+=$file.FullName}
 }
 $arguments=@{Path=(Join-Path $PSScriptRoot 'HyPlayer-MusicAtlas.msixbundle');ForceApplicationShutdown=$true}
 if($dependencies.Count){$arguments.DependencyPath=$dependencies}
