@@ -57,6 +57,7 @@ namespace HyPlayer.Pages;
 /// </summary>
 public sealed partial class ExpandedPlayer : Page, IDisposable
 {
+    private async void MusicAtlasClassification_Click(object sender, RoutedEventArgs e) => await MusicAtlasSongDialog.ShowCurrentAsync();
     public static readonly DependencyProperty NowPlaybackSpeedProperty = DependencyProperty.Register(
         "NowPlaybackSpeed", typeof(string), typeof(ExpandedPlayer),
         new PropertyMetadata("x" + HyPlayList.Player.PlaybackSession.PlaybackRate));

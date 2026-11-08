@@ -1,0 +1,12 @@
+{
+  "name": "hyplayer-music-atlas-ui",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node build-hyplayer-atlas.cjs",
+    "test": "node test.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

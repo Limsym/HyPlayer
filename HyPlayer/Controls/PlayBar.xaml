@@ -798,6 +798,7 @@
                 <MenuFlyout>
                     <MenuFlyoutItem IsEnabled="False" Text="{x:Bind Mode=OneWay, Path=TbSongName.Text}" />
                     <MenuFlyoutItem IsEnabled="False" Text="{x:Bind Mode=OneWay, Path=TbSingerName.Content}" />
+                    <MenuFlyoutItem Text="曲目分类" Click="MusicAtlasClassification_Click" AutomationProperties.Name="曲目分类" />
                     <MenuFlyoutSeparator />
                     <MenuFlyoutItem
                         x:Name="BtnFlyoutLike"

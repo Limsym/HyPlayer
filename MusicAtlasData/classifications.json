@@ -1,0 +1,2001 @@
+{
+  "schema": 4,
+  "categories": [
+    {
+      "color": "#9e546a",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:纯演奏音乐",
+      "name": "纯演奏音乐"
+    },
+    {
+      "color": "#587a97",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:电子",
+      "name": "电子"
+    },
+    {
+      "color": "#b57663",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:儿童",
+      "name": "儿童"
+    },
+    {
+      "color": "#c19359",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:二次元",
+      "name": "二次元"
+    },
+    {
+      "color": "#658d7b",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:放克",
+      "name": "放克"
+    },
+    {
+      "color": "#7c6caa",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:氛围",
+      "name": "氛围"
+    },
+    {
+      "color": "#7c6caa",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:古典",
+      "name": "古典"
+    },
+    {
+      "color": "#538e9f",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:国风",
+      "name": "国风"
+    },
+    {
+      "color": "#9d7361",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:金属",
+      "name": "金属"
+    },
+    {
+      "color": "#9e546a",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:爵士",
+      "name": "爵士"
+    },
+    {
+      "color": "#587a97",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:拉丁音乐",
+      "name": "拉丁音乐"
+    },
+    {
+      "color": "#c19359",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:蓝调",
+      "name": "蓝调"
+    },
+    {
+      "color": "#b57663",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:雷鬼",
+      "name": "雷鬼"
+    },
+    {
+      "color": "#c19359",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:另类/独立",
+      "name": "另类/独立"
+    },
+    {
+      "color": "#658d7b",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:流行",
+      "name": "流行"
+    },
+    {
+      "color": "#7c6caa",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:慢摇DJ",
+      "name": "慢摇DJ"
+    },
+    {
+      "color": "#538e9f",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:民谣",
+      "name": "民谣"
+    },
+    {
+      "color": "#9d7361",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:朋克",
+      "name": "朋克"
+    },
+    {
+      "color": "#9e546a",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:轻音乐",
+      "name": "轻音乐"
+    },
+    {
+      "color": "#587a97",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:实验",
+      "name": "实验"
+    },
+    {
+      "color": "#b57663",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:世界乐器体裁",
+      "name": "世界乐器体裁"
+    },
+    {
+      "color": "#c19359",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:世界音乐",
+      "name": "世界音乐"
+    },
+    {
+      "color": "#658d7b",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:嘻哈说唱",
+      "name": "嘻哈说唱"
+    },
+    {
+      "color": "#7c6caa",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:乡村",
+      "name": "乡村"
+    },
+    {
+      "color": "#538e9f",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:新世纪",
+      "name": "新世纪"
+    },
+    {
+      "color": "#9d7361",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:摇滚",
+      "name": "摇滚"
+    },
+    {
+      "color": "#9e546a",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:原声带",
+      "name": "原声带"
+    },
+    {
+      "color": "#587a97",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:中国传统特色",
+      "name": "中国传统特色"
+    },
+    {
+      "color": "#b57663",
+      "defaultHome": true,
+      "dim": "genre",
+      "id": "nc:R&B",
+      "name": "R&B"
+    },
+    {
+      "color": "#698767",
+      "defaultHome": true,
+      "dim": "source",
+      "id": "s-game",
+      "name": "游戏原声"
+    },
+    {
+      "color": "#9e7e56",
+      "defaultHome": true,
+      "dim": "source",
+      "id": "s-screen",
+      "name": "影视原声"
+    },
+    {
+      "color": "#7f7fb0",
+      "defaultHome": false,
+      "dim": "source",
+      "id": "s-anime",
+      "name": "动画 / ACG"
+    },
+    {
+      "color": "#9b6860",
+      "defaultHome": false,
+      "dim": "source",
+      "id": "s-live",
+      "name": "现场演出"
+    },
+    {
+      "color": "#5d879d",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "mood:放松",
+      "name": "放松"
+    },
+    {
+      "color": "#8b6d9f",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "mood:治愈",
+      "name": "治愈"
+    },
+    {
+      "color": "#a87a5a",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "mood:悲伤",
+      "name": "悲伤"
+    },
+    {
+      "color": "#679687",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "mood:平静",
+      "name": "平静"
+    },
+    {
+      "color": "#a35e78",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "mood:活力",
+      "name": "活力"
+    },
+    {
+      "color": "#5d879d",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "mood:思念",
+      "name": "思念"
+    },
+    {
+      "color": "#8b6d9f",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "mood:浪漫",
+      "name": "浪漫"
+    },
+    {
+      "color": "#a87a5a",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "mood:孤独",
+      "name": "孤独"
+    },
+    {
+      "color": "#679687",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "mood:欢快",
+      "name": "欢快"
+    },
+    {
+      "color": "#a35e78",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "mood:苦情",
+      "name": "苦情"
+    },
+    {
+      "color": "#5d879d",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "mood:狂欢",
+      "name": "狂欢"
+    },
+    {
+      "color": "#8b6d9f",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "mood:热血励志",
+      "name": "热血励志"
+    },
+    {
+      "color": "#a87a5a",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "mood:自信",
+      "name": "自信"
+    },
+    {
+      "color": "#679687",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "mood:抑郁",
+      "name": "抑郁"
+    },
+    {
+      "color": "#a35e78",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "mood:甜蜜",
+      "name": "甜蜜"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:纯演奏音乐-低保真",
+      "name": "纯演奏音乐-低保真",
+      "parent": "nc:纯演奏音乐"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-弛放低音",
+      "name": "电子-弛放低音",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-电气浩室舞曲",
+      "name": "电子-电气浩室舞曲",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-氛围电子",
+      "name": "电子-氛围电子",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-浩室舞曲",
+      "name": "电子-浩室舞曲",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-合成器浪潮",
+      "name": "电子-合成器浪潮",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-缓拍",
+      "name": "电子-缓拍",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-回响贝斯",
+      "name": "电子-回响贝斯",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-回响科技舞曲",
+      "name": "电子-回响科技舞曲",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-渐进浩室",
+      "name": "电子-渐进浩室",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-欧陆节拍",
+      "name": "电子-欧陆节拍",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-前卫浩室",
+      "name": "电子-前卫浩室",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-热带浩室舞曲",
+      "name": "电子-热带浩室舞曲",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-入梦弛放",
+      "name": "电子-入梦弛放",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-深浩室舞曲",
+      "name": "电子-深浩室舞曲",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-太空音乐",
+      "name": "电子-太空音乐",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-未来贝斯",
+      "name": "电子-未来贝斯",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-陷阱舞曲",
+      "name": "电子-陷阱舞曲",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-旋律回响贝斯",
+      "name": "电子-旋律回响贝斯",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-中速节奏",
+      "name": "电子-中速节奏",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:电子-Disco",
+      "name": "电子-Disco",
+      "parent": "nc:电子"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:儿童-儿歌",
+      "name": "儿童-儿歌",
+      "parent": "nc:儿童"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:儿童-胎教音乐",
+      "name": "儿童-胎教音乐",
+      "parent": "nc:儿童"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:二次元-唱见",
+      "name": "二次元-唱见",
+      "parent": "nc:二次元"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:二次元-动漫原声",
+      "name": "二次元-动漫原声",
+      "parent": "nc:二次元"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:二次元-动漫主题曲",
+      "name": "二次元-动漫主题曲",
+      "parent": "nc:二次元"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:二次元-二次元游戏原声带",
+      "name": "二次元-二次元游戏原声带",
+      "parent": "nc:二次元"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:二次元-歌声合成",
+      "name": "二次元-歌声合成",
+      "parent": "nc:二次元"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:二次元-特摄剧",
+      "name": "二次元-特摄剧",
+      "parent": "nc:二次元"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:二次元-同人作品",
+      "name": "二次元-同人作品",
+      "parent": "nc:二次元"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:二次元-游戏音乐",
+      "name": "二次元-游戏音乐",
+      "parent": "nc:二次元"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:古典-巴洛克时期",
+      "name": "古典-巴洛克时期",
+      "parent": "nc:古典"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:古典-当代古典音乐",
+      "name": "古典-当代古典音乐",
+      "parent": "nc:古典"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:古典-二十世纪古典",
+      "name": "古典-二十世纪古典",
+      "parent": "nc:古典"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:古典-古典跨界",
+      "name": "古典-古典跨界",
+      "parent": "nc:古典"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:古典-古典主义时期",
+      "name": "古典-古典主义时期",
+      "parent": "nc:古典"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:古典-浪漫主义时期",
+      "name": "古典-浪漫主义时期",
+      "parent": "nc:古典"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:古典-新古典主义音乐",
+      "name": "古典-新古典主义音乐",
+      "parent": "nc:古典"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:古典-印象主义音乐",
+      "name": "古典-印象主义音乐",
+      "parent": "nc:古典"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:国风-古风",
+      "name": "国风-古风",
+      "parent": "nc:国风"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:国风-国风纯音乐",
+      "name": "国风-国风纯音乐",
+      "parent": "nc:国风"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:国风-国风电子",
+      "name": "国风-国风电子",
+      "parent": "nc:国风"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:国风-国风流行",
+      "name": "国风-国风流行",
+      "parent": "nc:国风"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:国风-国风戏腔",
+      "name": "国风-国风戏腔",
+      "parent": "nc:国风"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:国风-国风摇滚",
+      "name": "国风-国风摇滚",
+      "parent": "nc:国风"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:金属-传统金属",
+      "name": "金属-传统金属",
+      "parent": "nc:金属"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:金属-哥特金属",
+      "name": "金属-哥特金属",
+      "parent": "nc:金属"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:金属-华丽金属",
+      "name": "金属-华丽金属",
+      "parent": "nc:金属"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:金属-交响金属",
+      "name": "金属-交响金属",
+      "parent": "nc:金属"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:金属-力量金属",
+      "name": "金属-力量金属",
+      "parent": "nc:金属"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:金属-民谣金属",
+      "name": "金属-民谣金属",
+      "parent": "nc:金属"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:金属-新古典金属",
+      "name": "金属-新古典金属",
+      "parent": "nc:金属"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:金属-新金属",
+      "name": "金属-新金属",
+      "parent": "nc:金属"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:金属-重金属",
+      "name": "金属-重金属",
+      "parent": "nc:金属"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:爵士-冷爵士",
+      "name": "爵士-冷爵士",
+      "parent": "nc:爵士"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:爵士-融合爵士",
+      "name": "爵士-融合爵士",
+      "parent": "nc:爵士"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:爵士-柔顺爵士",
+      "name": "爵士-柔顺爵士",
+      "parent": "nc:爵士"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:拉丁音乐-探戈",
+      "name": "拉丁音乐-探戈",
+      "parent": "nc:拉丁音乐"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:雷鬼-根源雷鬼",
+      "name": "雷鬼-根源雷鬼",
+      "parent": "nc:雷鬼"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:另类/独立-独立流行",
+      "name": "另类/独立-独立流行",
+      "parent": "nc:另类/独立"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:另类/独立-另类流行",
+      "name": "另类/独立-另类流行",
+      "parent": "nc:另类/独立"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:流行-草原流行",
+      "name": "流行-草原流行",
+      "parent": "nc:流行"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:流行-成人当代音乐",
+      "name": "流行-成人当代音乐",
+      "parent": "nc:流行"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:流行-德语流行",
+      "name": "流行-德语流行",
+      "parent": "nc:流行"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:流行-俄语流行",
+      "name": "流行-俄语流行",
+      "parent": "nc:流行"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:流行-法国流行",
+      "name": "流行-法国流行",
+      "parent": "nc:流行"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:流行-合成器流行",
+      "name": "流行-合成器流行",
+      "parent": "nc:流行"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:流行-华语流行",
+      "name": "流行-华语流行",
+      "parent": "nc:流行"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:流行-流行舞曲",
+      "name": "流行-流行舞曲",
+      "parent": "nc:流行"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:流行-欧美流行",
+      "name": "流行-欧美流行",
+      "parent": "nc:流行"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:流行-青少年流行",
+      "name": "流行-青少年流行",
+      "parent": "nc:流行"
+    },
+    {
+      "color": "#658d7b",
+      "dim": "genre",
+      "id": "nc:流行-日本流行",
+      "name": "流行-日本流行",
+      "parent": "nc:流行"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:流行-生日流行",
+      "name": "流行-生日流行",
+      "parent": "nc:流行"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:流行-粤语流行",
+      "name": "流行-粤语流行",
+      "parent": "nc:流行"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:流行-City Pop",
+      "name": "流行-City Pop",
+      "parent": "nc:流行"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:民谣-爱尔兰民谣",
+      "name": "民谣-爱尔兰民谣",
+      "parent": "nc:民谣"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:民谣-传统民谣",
+      "name": "民谣-传统民谣",
+      "parent": "nc:民谣"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:民谣-当代民谣",
+      "name": "民谣-当代民谣",
+      "parent": "nc:民谣"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:民谣-独立民谣",
+      "name": "民谣-独立民谣",
+      "parent": "nc:民谣"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:民谣-华语民谣",
+      "name": "民谣-华语民谣",
+      "parent": "nc:民谣"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:民谣-凯尔特民谣",
+      "name": "民谣-凯尔特民谣",
+      "parent": "nc:民谣"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:民谣-融合民谣",
+      "name": "民谣-融合民谣",
+      "parent": "nc:民谣"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:民谣-世界民谣",
+      "name": "民谣-世界民谣",
+      "parent": "nc:民谣"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:民谣-校园民谣",
+      "name": "民谣-校园民谣",
+      "parent": "nc:民谣"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:民谣-新民谣",
+      "name": "民谣-新民谣",
+      "parent": "nc:民谣"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:朋克-哥特摇滚",
+      "name": "朋克-哥特摇滚",
+      "parent": "nc:朋克"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:朋克-后朋克",
+      "name": "朋克-后朋克",
+      "parent": "nc:朋克"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:朋克-后硬核",
+      "name": "朋克-后硬核",
+      "parent": "nc:朋克"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:朋克-流行朋克",
+      "name": "朋克-流行朋克",
+      "parent": "nc:朋克"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:朋克-新浪潮",
+      "name": "朋克-新浪潮",
+      "parent": "nc:朋克"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:轻音乐-流行轻音乐",
+      "name": "轻音乐-流行轻音乐",
+      "parent": "nc:轻音乐"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:实验-自然环境声",
+      "name": "实验-自然环境声",
+      "parent": "nc:实验"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:世界乐器体裁-大提琴",
+      "name": "世界乐器体裁-大提琴",
+      "parent": "nc:世界乐器体裁"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:世界乐器体裁-钢琴",
+      "name": "世界乐器体裁-钢琴",
+      "parent": "nc:世界乐器体裁"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:世界乐器体裁-管弦乐",
+      "name": "世界乐器体裁-管弦乐",
+      "parent": "nc:世界乐器体裁"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:世界乐器体裁-吉他",
+      "name": "世界乐器体裁-吉他",
+      "parent": "nc:世界乐器体裁"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:世界乐器体裁-交响乐",
+      "name": "世界乐器体裁-交响乐",
+      "parent": "nc:世界乐器体裁"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:世界乐器体裁-弦乐",
+      "name": "世界乐器体裁-弦乐",
+      "parent": "nc:世界乐器体裁"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:世界音乐-俄罗斯传统与特色",
+      "name": "世界音乐-俄罗斯传统与特色",
+      "parent": "nc:世界音乐"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:世界音乐-凯尔特传统与特色",
+      "name": "世界音乐-凯尔特传统与特色",
+      "parent": "nc:世界音乐"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:世界音乐-南美传统与特色",
+      "name": "世界音乐-南美传统与特色",
+      "parent": "nc:世界音乐"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:世界音乐-施拉格尔",
+      "name": "世界音乐-施拉格尔",
+      "parent": "nc:世界音乐"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:嘻哈说唱-弛放嘻哈",
+      "name": "嘻哈说唱-弛放嘻哈",
+      "parent": "nc:嘻哈说唱"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:嘻哈说唱-低保真嘻哈",
+      "name": "嘻哈说唱-低保真嘻哈",
+      "parent": "nc:嘻哈说唱"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:嘻哈说唱-黄金时代嘻哈",
+      "name": "嘻哈说唱-黄金时代嘻哈",
+      "parent": "nc:嘻哈说唱"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:嘻哈说唱-雷击顿",
+      "name": "嘻哈说唱-雷击顿",
+      "parent": "nc:嘻哈说唱"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:嘻哈说唱-另类嘻哈",
+      "name": "嘻哈说唱-另类嘻哈",
+      "parent": "nc:嘻哈说唱"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:嘻哈说唱-流行说唱",
+      "name": "嘻哈说唱-流行说唱",
+      "parent": "nc:嘻哈说唱"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:嘻哈说唱-情绪说唱",
+      "name": "嘻哈说唱-情绪说唱",
+      "parent": "nc:嘻哈说唱"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:嘻哈说唱-说唱伴奏",
+      "name": "嘻哈说唱-说唱伴奏",
+      "parent": "nc:嘻哈说唱"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:嘻哈说唱-西岸说唱",
+      "name": "嘻哈说唱-西岸说唱",
+      "parent": "nc:嘻哈说唱"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:嘻哈说唱-陷阱说唱",
+      "name": "嘻哈说唱-陷阱说唱",
+      "parent": "nc:嘻哈说唱"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:嘻哈说唱-新杰克摇摆",
+      "name": "嘻哈说唱-新杰克摇摆",
+      "parent": "nc:嘻哈说唱"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:嘻哈说唱-旋律说唱",
+      "name": "嘻哈说唱-旋律说唱",
+      "parent": "nc:嘻哈说唱"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:嘻哈说唱-意识说唱",
+      "name": "嘻哈说唱-意识说唱",
+      "parent": "nc:嘻哈说唱"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:嘻哈说唱-硬核说唱",
+      "name": "嘻哈说唱-硬核说唱",
+      "parent": "nc:嘻哈说唱"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:嘻哈说唱-中文说唱",
+      "name": "嘻哈说唱-中文说唱",
+      "parent": "nc:嘻哈说唱"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:乡村-传统乡村乐",
+      "name": "乡村-传统乡村乐",
+      "parent": "nc:乡村"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:乡村-另类乡村",
+      "name": "乡村-另类乡村",
+      "parent": "nc:乡村"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:乡村-美式乡村",
+      "name": "乡村-美式乡村",
+      "parent": "nc:乡村"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:乡村-纳什维尔之声",
+      "name": "乡村-纳什维尔之声",
+      "parent": "nc:乡村"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:乡村-乡村流行",
+      "name": "乡村-乡村流行",
+      "parent": "nc:乡村"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:乡村-乡村摇滚",
+      "name": "乡村-乡村摇滚",
+      "parent": "nc:乡村"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:新世纪-冥想音乐",
+      "name": "新世纪-冥想音乐",
+      "parent": "nc:新世纪"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:新世纪-自然新世纪",
+      "name": "新世纪-自然新世纪",
+      "parent": "nc:新世纪"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-独立摇滚",
+      "name": "摇滚-独立摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-根源摇滚",
+      "name": "摇滚-根源摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-后摇",
+      "name": "摇滚-后摇",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-华丽摇滚",
+      "name": "摇滚-华丽摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-经典摇滚",
+      "name": "摇滚-经典摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-垃圾摇滚",
+      "name": "摇滚-垃圾摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-蓝调摇滚",
+      "name": "摇滚-蓝调摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-另类摇滚",
+      "name": "摇滚-另类摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-流行摇滚",
+      "name": "摇滚-流行摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-梦幻流行",
+      "name": "摇滚-梦幻流行",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-迷幻摇滚",
+      "name": "摇滚-迷幻摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-民谣摇滚",
+      "name": "摇滚-民谣摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-南方摇滚",
+      "name": "摇滚-南方摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-前卫摇滚",
+      "name": "摇滚-前卫摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-日系摇滚",
+      "name": "摇滚-日系摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-软摇滚",
+      "name": "摇滚-软摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-视觉摇滚",
+      "name": "摇滚-视觉摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-室内流行",
+      "name": "摇滚-室内流行",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-说唱摇滚",
+      "name": "摇滚-说唱摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-新迷幻",
+      "name": "摇滚-新迷幻",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-学院摇滚",
+      "name": "摇滚-学院摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-艺术摇滚",
+      "name": "摇滚-艺术摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-英伦摇滚",
+      "name": "摇滚-英伦摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-硬摇滚",
+      "name": "摇滚-硬摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:摇滚-噪音摇滚",
+      "name": "摇滚-噪音摇滚",
+      "parent": "nc:摇滚"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-布袋戏原声",
+      "name": "原声带-布袋戏原声",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-电视剧原声",
+      "name": "原声带-电视剧原声",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-电影配乐",
+      "name": "原声带-电影配乐",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-电影原声",
+      "name": "原声带-电影原声",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-动画片原声",
+      "name": "原声带-动画片原声",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-广播剧原声",
+      "name": "原声带-广播剧原声",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-广告原声",
+      "name": "原声带-广告原声",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-纪录片原声",
+      "name": "原声带-纪录片原声",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-配乐",
+      "name": "原声带-配乐",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-史诗音乐",
+      "name": "原声带-史诗音乐",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-手游原声",
+      "name": "原声带-手游原声",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-体育节目原声",
+      "name": "原声带-体育节目原声",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-音乐剧",
+      "name": "原声带-音乐剧",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-游戏原声",
+      "name": "原声带-游戏原声",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-主机游戏配乐",
+      "name": "原声带-主机游戏配乐",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-综艺原声",
+      "name": "原声带-综艺原声",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:原声带-Disney",
+      "name": "原声带-Disney",
+      "parent": "nc:原声带"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:中国传统特色-洞箫",
+      "name": "中国传统特色-洞箫",
+      "parent": "nc:中国传统特色"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:中国传统特色-二胡",
+      "name": "中国传统特色-二胡",
+      "parent": "nc:中国传统特色"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:中国传统特色-古筝",
+      "name": "中国传统特色-古筝",
+      "parent": "nc:中国传统特色"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:中国传统特色-红色经典",
+      "name": "中国传统特色-红色经典",
+      "parent": "nc:中国传统特色"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:中国传统特色-军旅歌曲",
+      "name": "中国传统特色-军旅歌曲",
+      "parent": "nc:中国传统特色"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:中国传统特色-马头琴",
+      "name": "中国传统特色-马头琴",
+      "parent": "nc:中国传统特色"
+    },
+    {
+      "color": "#658d7b",
+      "dim": "genre",
+      "id": "nc:中国传统特色-民乐",
+      "name": "中国传统特色-民乐",
+      "parent": "nc:中国传统特色"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:中国传统特色-民族歌曲",
+      "name": "中国传统特色-民族歌曲",
+      "parent": "nc:中国传统特色"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:中国传统特色-时代曲",
+      "name": "中国传统特色-时代曲",
+      "parent": "nc:中国传统特色"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:中国传统特色-戏曲",
+      "name": "中国传统特色-戏曲",
+      "parent": "nc:中国传统特色"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:中国传统特色-正能量",
+      "name": "中国传统特色-正能量",
+      "parent": "nc:中国传统特色"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:中国传统特色-中国艺术歌曲",
+      "name": "中国传统特色-中国艺术歌曲",
+      "parent": "nc:中国传统特色"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:R&B-当代R&B",
+      "name": "R&B-当代R&B",
+      "parent": "nc:R&B"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:R&B-都市流行",
+      "name": "R&B-都市流行",
+      "parent": "nc:R&B"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:R&B-灵魂乐",
+      "name": "R&B-灵魂乐",
+      "parent": "nc:R&B"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:R&B-流行灵魂乐",
+      "name": "R&B-流行灵魂乐",
+      "parent": "nc:R&B"
+    },
+    {
+      "color": "#5d879d",
+      "dim": "genre",
+      "id": "nc:R&B-摩城音乐",
+      "name": "R&B-摩城音乐",
+      "parent": "nc:R&B"
+    },
+    {
+      "color": "#547ca0",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "m-calm",
+      "name": "宁静 / 空灵"
+    },
+    {
+      "color": "#526ca3",
+      "defaultHome": true,
+      "dim": "mood",
+      "id": "m-sad",
+      "name": "忧伤 / 怀旧"
+    },
+    {
+      "color": "#bd715a",
+      "defaultHome": false,
+      "dim": "mood",
+      "id": "m-energy",
+      "name": "热烈 / 昂扬"
+    },
+    {
+      "color": "#609b87",
+      "defaultHome": false,
+      "dim": "mood",
+      "id": "m-travel",
+      "name": "旅途 / 自由"
+    },
+    {
+      "color": "#948b63",
+      "defaultHome": false,
+      "dim": "mood",
+      "id": "m-sacred",
+      "name": "神圣 / 仪式"
+    },
+    {
+      "color": "#b5a35c",
+      "defaultHome": false,
+      "dim": "mood",
+      "id": "m-happy",
+      "name": "轻快 / 诙谐"
+    }
+  ],
+  "home": [
+    "m-epic",
+    "m-dark",
+    "nc:流行",
+    "nc:原声带",
+    "nc:摇滚",
+    "nc:古典",
+    "nc:国风",
+    "nc:轻音乐",
+    "nc:民谣",
+    "nc:新世纪",
+    "nc:电子",
+    "nc:二次元",
+    "nc:嘻哈说唱",
+    "mood:放松",
+    "mood:治愈",
+    "mood:悲伤",
+    "mood:平静",
+    "mood:活力",
+    "mood:思念",
+    "mood:浪漫",
+    "mood:孤独",
+    "mood:欢快",
+    "mood:苦情",
+    "mood:狂欢",
+    "s-screen",
+    "s-game",
+    "s-live",
+    "s-anime"
+  ],
+  "overrides": {
+    "ncm-song-1298571431": {
+      "genre": [
+        "nc:轻音乐"
+      ]
+    },
+    "ncm-song-1300505020": {
+      "genre": [
+        "nc:国风"
+      ]
+    },
+    "ncm-song-1318312222": {
+      "genre": [
+        "nc:轻音乐"
+      ],
+      "mood": [
+        "m-calm"
+      ]
+    },
+    "ncm-song-1371702239": {
+      "genre": [
+        "nc:原声带"
+      ]
+    },
+    "ncm-song-1371721382": {
+      "genre": [
+        "nc:国风"
+      ]
+    },
+    "ncm-song-1381723556": {
+      "source": [
+        "s-anime"
+      ]
+    },
+    "ncm-song-1403318151": {
+      "mood": [
+        "m-sad"
+      ]
+    },
+    "ncm-song-1413443647": {
+      "genre": [
+        "nc:新世纪"
+      ]
+    },
+    "ncm-song-156288": {
+      "mood": [
+        "m-sad"
+      ]
+    },
+    "ncm-song-156374": {
+      "mood": [
+        "m-sad",
+        "m-energy"
+      ]
+    },
+    "ncm-song-156828": {
+      "mood": [
+        "m-sad"
+      ]
+    },
+    "ncm-song-18102658": {
+      "genre": [
+        "nc:民谣"
+      ]
+    },
+    "ncm-song-18102666": {
+      "genre": [
+        "nc:流行"
+      ]
+    },
+    "ncm-song-1872367": {
+      "genre": [
+        "nc:新世纪"
+      ]
+    },
+    "ncm-song-188053": {
+      "mood": [
+        "m-calm"
+      ]
+    },
+    "ncm-song-19089299": {
+      "genre": [
+        "nc:金属"
+      ]
+    },
+    "ncm-song-1910623420": {
+      "source": [
+        "s-anime"
+      ]
+    },
+    "ncm-song-20531567": {
+      "mood": [
+        "m-travel"
+      ]
+    },
+    "ncm-song-2062603": {
+      "mood": [
+        "m-calm"
+      ]
+    },
+    "ncm-song-22707008": {
+      "mood": [
+        "m-calm"
+      ]
+    },
+    "ncm-song-23170066": {
+      "genre": [
+        "nc:古典"
+      ],
+      "mood": [
+        "m-energy"
+      ]
+    },
+    "ncm-song-2530225": {
+      "genre": [
+        "nc:新世纪"
+      ],
+      "mood": [
+        "m-calm"
+      ]
+    },
+    "ncm-song-25638306": {
+      "genre": [
+        "nc:流行-日本流行"
+      ],
+      "mood": [
+        "m-calm"
+      ]
+    },
+    "ncm-song-28656154": {
+      "genre": [
+        "nc:轻音乐"
+      ],
+      "mood": [
+        "m-sad"
+      ]
+    },
+    "ncm-song-28718069": {
+      "genre": [
+        "nc:古典"
+      ]
+    },
+    "ncm-song-28892408": {
+      "mood": [
+        "m-energy"
+      ],
+      "source": [
+        "s-screen"
+      ]
+    },
+    "ncm-song-29755223": {
+      "mood": [
+        "m-energy",
+        "m-sad"
+      ],
+      "source": [
+        "s-screen"
+      ]
+    },
+    "ncm-song-30031087": {
+      "genre": [
+        "nc:国风"
+      ]
+    },
+    "ncm-song-32743519": {
+      "genre": [
+        "nc:新世纪"
+      ]
+    },
+    "ncm-song-33875750": {
+      "genre": [
+        "nc:轻音乐"
+      ]
+    },
+    "ncm-song-4010892": {
+      "genre": [
+        "nc:轻音乐"
+      ],
+      "mood": [
+        "m-happy"
+      ]
+    },
+    "ncm-song-408277677": {
+      "genre": [
+        "nc:流行"
+      ]
+    },
+    "ncm-song-4083902": {
+      "genre": [
+        "nc:民谣"
+      ]
+    },
+    "ncm-song-4084424": {
+      "genre": [
+        "nc:民谣"
+      ]
+    },
+    "ncm-song-4084941": {
+      "genre": [
+        "nc:流行"
+      ]
+    },
+    "ncm-song-438632": {
+      "mood": [
+        "m-sacred"
+      ]
+    },
+    "ncm-song-4412747": {
+      "genre": [
+        "nc:纯演奏音乐"
+      ]
+    },
+    "ncm-song-451258342": {
+      "genre": [
+        "nc:古典"
+      ]
+    },
+    "ncm-song-452476181": {
+      "genre": [
+        "nc:流行"
+      ]
+    },
+    "ncm-song-462415279": {
+      "genre": [
+        "nc:古典"
+      ]
+    },
+    "ncm-song-467595237": {
+      "mood": [
+        "m-energy"
+      ]
+    },
+    "ncm-song-475806254": {
+      "genre": [
+        "nc:轻音乐"
+      ],
+      "mood": [
+        "m-calm"
+      ]
+    },
+    "ncm-song-490752026": {
+      "source": [
+        "s-anime"
+      ]
+    },
+    "ncm-song-491342532": {
+      "genre": [
+        "nc:新世纪"
+      ]
+    },
+    "ncm-song-4968365": {
+      "genre": [
+        "nc:原声带"
+      ]
+    },
+    "ncm-song-5061349": {
+      "genre": [
+        "nc:流行",
+        "nc:纯演奏音乐"
+      ]
+    },
+    "ncm-song-511369": {
+      "genre": [
+        "nc:新世纪"
+      ]
+    },
+    "ncm-song-5260093": {
+      "genre": [
+        "nc:中国传统特色-民乐"
+      ]
+    },
+    "ncm-song-5264176": {
+      "genre": [
+        "nc:古典"
+      ]
+    },
+    "ncm-song-532936": {
+      "source": [
+        "s-anime"
+      ]
+    },
+    "ncm-song-543068290": {
+      "genre": [
+        "nc:轻音乐"
+      ]
+    },
+    "ncm-song-863849628": {
+      "genre": [
+        "nc:中国传统特色"
+      ],
+      "mood": [],
+      "source": []
+    }
+  },
+  "activeDim": "mood",
+  "expansion": {
+    "genre": "auto",
+    "mood": "auto",
+    "source": "auto"
+  }
+}

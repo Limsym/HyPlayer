@@ -1,0 +1,428 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>HyPlayer 音乐地图</title>
+<style>
+[hidden]{display:none!important}
+:root{color-scheme:dark;--bg:#090e17;--panel:#121c29;--panel2:#172334;--line:#293747;--txt:#eaf0f1;--muted:#95a4b6;--mint:#c6dec9;font-family:Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;color:var(--txt);background:radial-gradient(ellipse at 0 0,#18303b,transparent 45%),var(--bg);font-size:13px}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:2px solid var(--mint);outline-offset:2px}.page{max-width:1580px;margin:auto;padding:25px clamp(12px,2.6vw,38px) 102px}header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin:0 0 19px}h1{font:500 clamp(29px,3.4vw,45px) Georgia,"Songti SC",serif;margin:4px 0 8px;letter-spacing:.02em}.kicker{font-size:10px;letter-spacing:.24em;color:#adcbb6;font-weight:800}.sub{color:#abb8c3;font-size:12px;line-height:1.6;max-width:800px}.toolbar{display:flex;gap:8px;flex-wrap:wrap}.btn,.pill{color:var(--txt);background:#192838;border:1px solid #394b60;border-radius:10px;padding:9px 12px;white-space:nowrap;font-size:12px}.btn:hover,.pill:hover{background:#263a50}.btn.primary{background:#c8e4c8;color:#152b24;border-color:transparent;font-weight:800}.btn.primary:hover{background:#e0f1dc}.btn input{display:none}.stats{display:flex;gap:22px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px 0;margin-bottom:17px}.stat strong{font-size:22px;font-weight:600;letter-spacing:-.04em;display:block}.stat span{font-size:11px;color:var(--muted)}.badge{margin-left:auto;border:1px solid #625842;background:#33291e;color:#e8d6ad;border-radius:50px;padding:7px 10px;font-size:11px}.main{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(315px,.78fr);gap:14px}.panel{background:linear-gradient(145deg,#142232,#101926);border:1px solid #29394a;border-radius:17px;min-width:0;overflow:hidden}.map-panel{padding:14px;display:flex;flex-direction:column}.panel-head{display:flex;gap:12px;align-items:baseline;justify-content:space-between;margin:5px 6px 13px}.panel-head b{font-size:14px;font-weight:700}.panel-head span{font-size:11px;color:var(--muted)}.map{width:100%;height:min(59vh,555px);min-height:385px;position:relative;border-radius:12px;overflow:hidden;background:#0b1724}.tile{position:absolute;border:3px solid #111c2a;border-radius:9px;padding:clamp(7px,1.2vw,14px);color:white;display:flex;text-align:left;flex-direction:column;align-items:flex-start;justify-content:space-between;overflow:hidden;transition:filter .15s}.tile:hover{filter:brightness(1.18);z-index:2}.tile.selected{box-shadow:inset 0 0 0 2px white;z-index:1}.tile .name{font-weight:800;font-size:clamp(12px,1.3vw,20px);max-width:100%;line-height:1.2;text-wrap:balance}.tile .size{font-size:clamp(20px,3vw,44px);letter-spacing:-.06em}.tile .size small{font-size:11px;letter-spacing:0;opacity:.8}.tile .cover{font-size:10px;opacity:.85;margin-top:4px}.tile.small .name{font-size:11px}.tile.small .size{font-size:23px}.tile.tiny .size,.tile.tiny .cover{display:none}.tile.tiny{padding:6px}.tile.tiny .name{font-size:10px}.map-note{line-height:1.6;color:var(--muted);font-size:11px;margin:11px 7px 3px}.right{display:flex;flex-direction:column;gap:14px;min-width:0}.inspect{padding:19px;min-height:385px;display:flex;flex-direction:column}.section-label{font-size:10px;letter-spacing:.2em;font-weight:750;color:#a0b1be}.details-title{font:500 27px Georgia,"Songti SC",serif;margin:10px 0 5px}.details-meta{color:var(--muted);font-size:12px;line-height:1.7}.actions{display:flex;align-items:center;gap:8px;margin:17px 0 10px;flex-wrap:wrap}.auto{font-size:11px;color:#bdc7d2;display:flex;gap:6px;align-items:center}.auto input{accent-color:#a9d1af}.search{width:100%;background:#0c1520;border:1px solid #30465a;border-radius:9px;padding:10px;color:var(--txt);margin:3px 0 6px}.tracks{overflow-y:auto;max-height:330px;min-height:130px;flex:1;scrollbar-width:thin}.song{padding:9px 3px;border-bottom:1px solid #243445;display:flex;align-items:center;gap:9px}.song-info{flex:1;min-width:0}.song-title{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.song-artist{color:#8f9eaf;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:3px}.song button{border:1px solid #3c5065;background:#1a2c3c;color:#edf3ef;border-radius:8px;font-size:11px;padding:6px 8px}.hint{color:#8ea2b2;font-size:11px;line-height:1.6}.editor{border-top:1px solid #2b3d4e;padding-top:12px;margin-top:10px}.editor-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.editor h3{margin:5px 0;font-size:12px;font-weight:700}.mini{font-size:11px;color:var(--muted)}.editor-row{display:flex;gap:5px;flex-wrap:wrap;margin:7px 0}.chip{border:1px solid #415063;border-radius:6px;padding:5px 7px;color:#bdcbd6;background:#182839;font-size:11px}.chip.on{color:#fff;border-color:#a5d0b5;background:#2c544c}.chip:hover{filter:brightness(1.15)}.chooser{margin-top:15px;padding:17px}.chooser-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.chooser h2{font-size:16px;font-weight:700;margin:0}.chooser-desc{font-size:11px;line-height:1.65;color:var(--muted);margin-top:7px}.group-row{display:grid;grid-template-columns:95px 1fr;gap:15px;border-top:1px solid #2c3b4b;padding:16px 0}.group-row:first-of-type{margin-top:12px}.group-name{font-size:13px;font-weight:700;display:flex;align-items:flex-start;gap:7px}.group-name:before{content:'';display:block;width:5px;height:16px;border-radius:3px;background:var(--group)}.type-list{display:flex;gap:8px;flex-wrap:wrap}.type{display:flex;align-items:center;gap:8px;border:1px solid #3a495c;border-radius:11px;padding:9px 10px;background:#172638;color:#c8d3dc;min-height:45px;text-align:left}.type.selected{background:#263b47;border-color:#7eb3b4;color:#fff}.type:disabled{opacity:.45}.type .dot{width:9px;height:9px;border-radius:3px;background:var(--type);flex:none}.type .cnt{font-variant-numeric:tabular-nums;border-radius:4px;color:#aab9c4;background:#0d1924;padding:3px 5px;font-size:11px}.type .mark{opacity:.8;font-size:12px}.type-name{font-weight:650}.newtype{border-top:1px dashed #37495a;padding:12px 0 0;display:flex;gap:7px;align-items:center;flex-wrap:wrap}.newtype input,.newtype select{padding:8px;border-radius:7px;background:#0e1b29;border:1px solid #354b60;color:var(--txt);font-size:12px}.newtype input{min-width:170px}.player{position:fixed;bottom:0;left:0;right:0;z-index:9;display:flex;align-items:center;gap:20px;border-top:1px solid #33465b;background:rgba(8,15,24,.97);backdrop-filter:blur(10px);padding:10px clamp(12px,3vw,45px);min-height:74px}.player .now{flex:1;min-width:130px;max-width:340px}.player b,.player span{display:block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.player span{font-size:11px;color:var(--muted);margin-top:4px}.player audio{flex:1;width:200px;max-width:600px;height:35px}.toast{position:fixed;z-index:10;bottom:91px;left:50%;transform:translate(-50%,15px);opacity:0;pointer-events:none;max-width:90vw;background:#293d51;border:1px solid #5d7186;padding:10px 14px;border-radius:10px;transition:opacity .15s,transform .15s}.toast.on{opacity:1;transform:translate(-50%,0)}
+@media(max-width:950px){.main{grid-template-columns:1fr}.right{display:grid;grid-template-columns:1fr}.map{height:440px}.badge{margin-left:0}}@media(max-width:600px){.group-row{grid-template-columns:1fr;gap:10px}.type{padding:7px 8px;min-height:41px}.map{height:380px;min-height:380px}.tile{border-width:2px;padding:6px}.tile .name{font-size:12px}.tile .size{font-size:25px}.tile .cover{display:none}.chooser{padding:12px}.page{padding-bottom:110px}.stats{gap:12px}.stat strong{font-size:19px}.player{gap:10px}.player audio{min-width:140px}.badge{width:100%;text-align:center}}
+
+:root{--accent:#c6dec9;--accent-ink:#152b24;--wash:#18303b;--control:#192838;--hover:#263a50;--surface:#0c1520}
+:root[data-theme="light"]{color-scheme:light;--bg:#f3f5f3;--panel:#ffffff;--panel2:#edf1ee;--line:#d5ded8;--txt:#202d29;--muted:#586b62;--wash:#dce9df;--control:#f4f7f5;--hover:#e3ebe5;--surface:#fff}
+body{background:radial-gradient(ellipse at 0 0,var(--wash),transparent 45%),var(--bg)}
+.panel,dialog{background:var(--panel);border-color:var(--line)}.btn,.pill,.song button,.chip,.type{background:var(--control);border-color:var(--line);color:var(--txt)}.btn:hover,.pill:hover{background:var(--hover)}
+.btn.primary,.type.selected,.chip.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}.btn.primary:hover{filter:brightness(.95);background:var(--accent)}
+.kicker,.section-label,.song-artist,.hint,.mini,.auto{color:var(--muted)}.search,.newtype input,.newtype select,select{background:var(--surface);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:9px}
+.map{background:var(--panel2)}.tile{border-color:var(--panel)}.tile .cover{display:none}.tile .name{text-shadow:0 1px 3px #0009}.tile{color:#fff;text-shadow:0 1px 3px #0006}
+.type .cnt{background:var(--surface);color:var(--txt)}.group-row,.song,.editor,.newtype{border-color:var(--line)}.player{background:var(--panel);border-color:var(--line)}.toast{background:var(--panel2);border-color:var(--line);color:var(--txt)}
+button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}input{accent-color:var(--accent)}
+dialog{color:var(--txt);width:min(720px,calc(100% - 24px));max-height:85vh;border:1px solid var(--line);border-radius:18px;padding:24px}dialog::backdrop{background:#0008;backdrop-filter:blur(3px)}.dialog-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.dialog-head h2{font-size:21px;margin:0}.setting-section{padding:18px 0;border-bottom:1px solid var(--line)}.setting-section h3{margin:0 0 13px;font-size:14px}.setting-section label{display:flex;align-items:center;gap:12px;margin:10px 0}.setting-section select{margin-left:auto;min-width:140px}summary{cursor:pointer;font-weight:600}.setting-section .stats{margin-top:15px}.newtype{margin-top:16px}.editor{border:0}.tracks{max-height:380px}.more{display:block;margin:14px auto}.tile.tiny .name{overflow:hidden;max-width:100%}
+
+.dimension-panel{padding:16px 20px;margin-bottom:16px}.dimension-panel .actions{margin:0}.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.filter-row strong{min-width:45px;padding:6px 0}.dimension-tab[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}.dimension-panel summary{padding:8px 0}.dimension-panel .hint{margin:8px 0}.editor-row .btn{font-size:11px;padding:5px 8px}
+.editor-only .page,.editor-only .dialog-head,.editor-only .editor-head{display:none!important}.editor-only #songDetails{display:block;position:static;width:100%;max-height:none;margin:0;padding:12px;border:0;border-radius:0}.editor-only #songDetails::backdrop{display:none}.editor-only .toast{bottom:12px}.editor-only{background:var(--panel)}.tag-search-results{max-height:190px;overflow:auto;display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}.tag-search-results .chip{text-align:left}.tag-tabs{display:flex;gap:8px;margin:14px 0}.selected-tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.tag-caption{margin:8px 0}.tag-tools{display:flex;gap:6px;flex-wrap:wrap}.tag-create{display:flex;gap:8px;margin:8px 0;flex-wrap:wrap}.tag-create input{min-width:120px;flex:1}.tag-tabs{flex-wrap:wrap;align-items:center}.tag-provenance{flex:1;min-width:150px}.tile .name{font-size:clamp(16px,1.8vw,26px);line-height:1.25;overflow-wrap:anywhere}.tile .size{font-size:clamp(13px,1.2vw,18px);letter-spacing:0}.tile.small .name{font-size:clamp(14px,1.5vw,20px)}.tile.small .size{font-size:14px}.tile.tiny .name{font-size:14px}.tile.tiny .size{display:none}</style></head><body><div class="page"><header><div><div class="kicker">HYPLAYER / MUSIC ATLAS</div><h1 id="playlistName">正在等待歌单…</h1></div><div class="toolbar"><button id="settingsBtn" class="btn">设置</button></div></header>
+<div class="stats"><div class="stat"><strong id="sAll">—</strong><span>首歌曲</span></div><div class="stat"><strong id="sHome">—</strong><span>个地图分类</span></div></div><section class="panel dimension-panel"><div id="dimensionTabs" class="actions"></div><p id="mapSummary" class="hint"></p><details id="filterPanel"><summary>组合筛选 <span id="filterSummary"></span></summary><p class="hint">同维度任选其一，不同维度同时满足。筛选影响列表与播放，地图始终统计整个歌单。</p><div id="filterGroups"></div><button class="btn" id="clearFilters">清除组合筛选</button></details></section><div class="main"><section class="panel map-panel"><div class="panel-head"><b>音乐地图 · 整个歌单</b><span>选择风格，点击播放</span></div><div class="map" id="map"></div></section>
+<div class="right"><section class="panel inspect"><div class="section-label">EXPLORE · 当前类别</div><div class="details-title" id="detailTitle">选择一个方块</div><div class="details-meta" id="detailMeta"></div><div class="actions"><button class="btn primary" id="randomBtn">播放此类</button><button class="btn" id="allBtn">全部歌曲</button><button class="btn" id="unclassifiedBtn">未分类</button></div><input id="search" class="search" aria-label="搜索当前类别歌曲" placeholder="搜索当前类别的歌名、歌手、专辑"/><div class="tracks" id="tracks"></div></section></div></div>
+<section class="panel chooser"><div class="chooser-top"><div><h2>展开类别</h2><div class="chooser-desc">按歌曲数排列 · 折叠的分类票数并入“其它”，其余类别面积不变</div></div><button class="btn primary" id="recommendBtn">系统推荐</button></div><div id="groups"></div></section></div>
+<dialog id="settings"><div class="dialog-head"><h2>设置</h2><button class="btn" id="closeSettings">完成</button></div>
+<section class="setting-section"><h3>外观</h3><label>明暗主题 <select id="themeMode"><option value="system">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option></select></label><label>固定主题色 <select id="accent"><option value="green">松绿</option><option value="blue">海蓝</option><option value="purple">鸢紫</option><option value="amber">琥珀</option></select></label></section>
+<section class="setting-section"><h3>地图与播放</h3><label hidden><input type="checkbox" id="showOther" checked disabled> 保留完整地图</label><p class="hint">其它收纳折叠的分类票数；未分类收纳当前维度没有标签的歌曲，两者始终保留。</p><label class="auto"><input type="checkbox" id="autoPlay">点击方块即播放此类</label></section>
+<section class="setting-section"><h3>曲库与分类</h3><div class="toolbar"><label class="btn">导入歌曲 CSV / JSON <input type="file" accept=".csv,.json,.txt" id="importData"></label><label class="btn">关联本地音频 <input type="file" multiple accept="audio/*" id="importAudio"></label><button id="exportBtn" class="btn">导出分类与配置</button><button id="resetBtn" class="btn">恢复默认</button></div><div class="newtype"><span class="mini">自己创建类型</span><select id="newDim"><option value="genre">流派</option><option value="mood">气质</option><option value="source">来源</option></select><input id="newName" maxlength="30" placeholder="如：合唱 / 故土 / 原声器乐"/><button class="btn" id="newBtn">创建并加入主页</button></div></section>
+<details class="setting-section"><summary>规则与数据详情</summary><p class="hint">每首歌在当前维度每个不同标签各投一票；同一曲风大类的细分标签不重复投票。总票数为当前维度全部分类票数，加未分类歌曲数。组合筛选不改变地图面积。气质采用网易云情绪标签；来源沿用元数据规则初判，不代表经过人工确认。</p><p class="hint">“其它”合并折叠标签的票数，歌曲列表去重；“未分类”表示当前维度没有标签。系统推荐按已分类票数累计达到 90% 展开，有歌曲的类别不超过 10 个则全部展开。</p><div class="stats"><div class="stat"><strong id="sAssigned"></strong><span>类别归属总数</span></div><div class="stat"><strong id="sCovered"></strong><span>首已分类</span></div><div class="stat"><strong id="sVerified"></strong><span>首已人工校正</span></div></div><p class="hint" id="sourceBadge"></p><p class="hint">分类修正按歌曲 ID 保存在本机，跨歌单复用。主题和主页分类也会保留。播放与队列由 HyPlayer 管理。</p></details></dialog>
+<dialog id="songDetails"><div class="dialog-head"><h2>歌曲详情</h2><button class="btn" id="closeDetails">完成</button></div><div class="editor" id="editor" hidden><div class="editor-head"><h3>地图分类 · 点击增删以校正</h3><button class="btn" id="restoreAuto">恢复此曲全部自动标签</button></div><div id="editTitle" class="mini"></div><div id="tagEditor"></div><div class="hint">手动修改只覆盖同一维度，按歌曲 ID 保存在本机。气质使用网易云情绪标签，来源保留规则初判，可逐维度修正。</div></div></dialog><div class="player"><div class="now"><b id="nowTitle">尚未选曲</b><span id="nowArtist">选择歌曲开始播放</span></div><audio id="audio" controls preload="none"></audio></div><div id="toast" class="toast" role="status"></div>
+<script>const SEED_TRACKS=[];</script>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const dimensions=[{"id":"genre","name":"曲风","color":"#5888a3"},{"id":"mood","name":"气质","color":"#a77cba"},{"id":"source","name":"来源","color":"#b58b55"}];
+const definitions=[{"id":"nc:纯演奏音乐","dim":"genre","name":"纯演奏音乐","color":"#9e546a","defaultHome":true},{"id":"nc:电子","dim":"genre","name":"电子","color":"#587a97","defaultHome":true},{"id":"nc:儿童","dim":"genre","name":"儿童","color":"#b57663","defaultHome":true},{"id":"nc:二次元","dim":"genre","name":"二次元","color":"#c19359","defaultHome":true},{"id":"nc:放克","dim":"genre","name":"放克","color":"#658d7b","defaultHome":true},{"id":"nc:氛围","dim":"genre","name":"氛围","color":"#7c6caa","defaultHome":true},{"id":"nc:古典","dim":"genre","name":"古典","color":"#538e9f","defaultHome":true},{"id":"nc:国风","dim":"genre","name":"国风","color":"#9d7361","defaultHome":true},{"id":"nc:金属","dim":"genre","name":"金属","color":"#9e546a","defaultHome":true},{"id":"nc:爵士","dim":"genre","name":"爵士","color":"#587a97","defaultHome":true},{"id":"nc:拉丁音乐","dim":"genre","name":"拉丁音乐","color":"#b57663","defaultHome":true},{"id":"nc:蓝调","dim":"genre","name":"蓝调","color":"#c19359","defaultHome":true},{"id":"nc:雷鬼","dim":"genre","name":"雷鬼","color":"#658d7b","defaultHome":true},{"id":"nc:另类/独立","dim":"genre","name":"另类/独立","color":"#7c6caa","defaultHome":true},{"id":"nc:流行","dim":"genre","name":"流行","color":"#538e9f","defaultHome":true},{"id":"nc:慢摇DJ","dim":"genre","name":"慢摇DJ","color":"#9d7361","defaultHome":true},{"id":"nc:民谣","dim":"genre","name":"民谣","color":"#9e546a","defaultHome":true},{"id":"nc:朋克","dim":"genre","name":"朋克","color":"#587a97","defaultHome":true},{"id":"nc:轻音乐","dim":"genre","name":"轻音乐","color":"#b57663","defaultHome":true},{"id":"nc:实验","dim":"genre","name":"实验","color":"#c19359","defaultHome":true},{"id":"nc:世界乐器体裁","dim":"genre","name":"世界乐器体裁","color":"#658d7b","defaultHome":true},{"id":"nc:世界音乐","dim":"genre","name":"世界音乐","color":"#7c6caa","defaultHome":true},{"id":"nc:嘻哈说唱","dim":"genre","name":"嘻哈说唱","color":"#538e9f","defaultHome":true},{"id":"nc:乡村","dim":"genre","name":"乡村","color":"#9d7361","defaultHome":true},{"id":"nc:新世纪","dim":"genre","name":"新世纪","color":"#9e546a","defaultHome":true},{"id":"nc:摇滚","dim":"genre","name":"摇滚","color":"#587a97","defaultHome":true},{"id":"nc:原声带","dim":"genre","name":"原声带","color":"#b57663","defaultHome":true},{"id":"nc:中国传统特色","dim":"genre","name":"中国传统特色","color":"#c19359","defaultHome":true},{"id":"nc:R&B","dim":"genre","name":"R&B","color":"#658d7b","defaultHome":true}];
+const legacyDefinitions=[{"id":"g-rock","dim":"genre","name":"摇滚 / 金属","color":"#9e546a","defaultHome":true},{"id":"g-classical","dim":"genre","name":"古典 / 交响","color":"#587a97","defaultHome":true},{"id":"g-pop","dim":"genre","name":"流行 / 抒情","color":"#b57663","defaultHome":true},{"id":"g-folk","dim":"genre","name":"民谣 / 乡村","color":"#c19359","defaultHome":true},{"id":"g-trad","dim":"genre","name":"国风 / 民族","color":"#658d7b","defaultHome":true},{"id":"g-electronic","dim":"genre","name":"电子 / 合成器","color":"#7c6caa","defaultHome":false},{"id":"g-ambient","dim":"genre","name":"氛围 / 新世纪","color":"#538e9f","defaultHome":false},{"id":"g-jazz","dim":"genre","name":"爵士 / 蓝调","color":"#9d7361","defaultHome":false},{"id":"m-epic","dim":"mood","name":"史诗 / 远征","color":"#946baf","defaultHome":true},{"id":"m-calm","dim":"mood","name":"宁静 / 空灵","color":"#547ca0","defaultHome":true},{"id":"m-sad","dim":"mood","name":"忧伤 / 怀旧","color":"#526ca3","defaultHome":true},{"id":"m-energy","dim":"mood","name":"热烈 / 昂扬","color":"#bd715a","defaultHome":false},{"id":"m-travel","dim":"mood","name":"旅途 / 自由","color":"#609b87","defaultHome":false},{"id":"m-sacred","dim":"mood","name":"神圣 / 仪式","color":"#948b63","defaultHome":false},{"id":"m-dark","dim":"mood","name":"暗色 / 神秘","color":"#716b86","defaultHome":false},{"id":"m-happy","dim":"mood","name":"轻快 / 诙谐","color":"#b5a35c","defaultHome":false},{"id":"s-game","dim":"source","name":"游戏原声","color":"#698767","defaultHome":true},{"id":"s-screen","dim":"source","name":"影视原声","color":"#9e7e56","defaultHome":true},{"id":"s-anime","dim":"source","name":"动画 / ACG","color":"#7f7fb0","defaultHome":false},{"id":"s-live","dim":"source","name":"现场演出","color":"#9b6860","defaultHome":false}];
+definitions.push(...legacyDefinitions.filter(c=>c.dim==="source"));
+const genreCatalog=[
+  "纯演奏音乐",
+  "纯演奏音乐-低保真",
+  "电子",
+  "电子-弛放低音",
+  "电子-电气浩室舞曲",
+  "电子-氛围电子",
+  "电子-浩室舞曲",
+  "电子-合成器浪潮",
+  "电子-缓拍",
+  "电子-回响贝斯",
+  "电子-回响科技舞曲",
+  "电子-渐进浩室",
+  "电子-欧陆节拍",
+  "电子-前卫浩室",
+  "电子-热带浩室舞曲",
+  "电子-入梦弛放",
+  "电子-深浩室舞曲",
+  "电子-太空音乐",
+  "电子-未来贝斯",
+  "电子-陷阱舞曲",
+  "电子-旋律回响贝斯",
+  "电子-中速节奏",
+  "电子-Disco",
+  "儿童",
+  "儿童-儿歌",
+  "儿童-胎教音乐",
+  "二次元",
+  "二次元-唱见",
+  "二次元-动漫原声",
+  "二次元-动漫主题曲",
+  "二次元-二次元游戏原声带",
+  "二次元-歌声合成",
+  "二次元-特摄剧",
+  "二次元-同人作品",
+  "二次元-游戏音乐",
+  "放克",
+  "氛围",
+  "古典",
+  "古典-巴洛克时期",
+  "古典-当代古典音乐",
+  "古典-二十世纪古典",
+  "古典-古典跨界",
+  "古典-古典主义时期",
+  "古典-浪漫主义时期",
+  "古典-新古典主义音乐",
+  "古典-印象主义音乐",
+  "国风",
+  "国风-古风",
+  "国风-国风纯音乐",
+  "国风-国风电子",
+  "国风-国风流行",
+  "国风-国风戏腔",
+  "国风-国风摇滚",
+  "金属",
+  "金属-传统金属",
+  "金属-哥特金属",
+  "金属-华丽金属",
+  "金属-交响金属",
+  "金属-力量金属",
+  "金属-民谣金属",
+  "金属-新古典金属",
+  "金属-新金属",
+  "金属-重金属",
+  "爵士",
+  "爵士-冷爵士",
+  "爵士-融合爵士",
+  "爵士-柔顺爵士",
+  "拉丁音乐",
+  "拉丁音乐-探戈",
+  "蓝调",
+  "雷鬼",
+  "雷鬼-根源雷鬼",
+  "另类/独立",
+  "另类/独立-独立流行",
+  "另类/独立-另类流行",
+  "流行",
+  "流行-草原流行",
+  "流行-成人当代音乐",
+  "流行-德语流行",
+  "流行-俄语流行",
+  "流行-法国流行",
+  "流行-合成器流行",
+  "流行-华语流行",
+  "流行-流行舞曲",
+  "流行-欧美流行",
+  "流行-青少年流行",
+  "流行-日本流行",
+  "流行-生日流行",
+  "流行-粤语流行",
+  "流行-City Pop",
+  "慢摇DJ",
+  "民谣",
+  "民谣-爱尔兰民谣",
+  "民谣-传统民谣",
+  "民谣-当代民谣",
+  "民谣-独立民谣",
+  "民谣-华语民谣",
+  "民谣-凯尔特民谣",
+  "民谣-融合民谣",
+  "民谣-世界民谣",
+  "民谣-校园民谣",
+  "民谣-新民谣",
+  "朋克",
+  "朋克-哥特摇滚",
+  "朋克-后朋克",
+  "朋克-后硬核",
+  "朋克-流行朋克",
+  "朋克-新浪潮",
+  "轻音乐",
+  "轻音乐-流行轻音乐",
+  "实验",
+  "实验-自然环境声",
+  "世界乐器体裁",
+  "世界乐器体裁-大提琴",
+  "世界乐器体裁-钢琴",
+  "世界乐器体裁-管弦乐",
+  "世界乐器体裁-吉他",
+  "世界乐器体裁-交响乐",
+  "世界乐器体裁-弦乐",
+  "世界音乐",
+  "世界音乐-俄罗斯传统与特色",
+  "世界音乐-凯尔特传统与特色",
+  "世界音乐-南美传统与特色",
+  "世界音乐-施拉格尔",
+  "嘻哈说唱",
+  "嘻哈说唱-弛放嘻哈",
+  "嘻哈说唱-低保真嘻哈",
+  "嘻哈说唱-黄金时代嘻哈",
+  "嘻哈说唱-雷击顿",
+  "嘻哈说唱-另类嘻哈",
+  "嘻哈说唱-流行说唱",
+  "嘻哈说唱-情绪说唱",
+  "嘻哈说唱-说唱伴奏",
+  "嘻哈说唱-西岸说唱",
+  "嘻哈说唱-陷阱说唱",
+  "嘻哈说唱-新杰克摇摆",
+  "嘻哈说唱-旋律说唱",
+  "嘻哈说唱-意识说唱",
+  "嘻哈说唱-硬核说唱",
+  "嘻哈说唱-中文说唱",
+  "乡村",
+  "乡村-传统乡村乐",
+  "乡村-另类乡村",
+  "乡村-美式乡村",
+  "乡村-纳什维尔之声",
+  "乡村-乡村流行",
+  "乡村-乡村摇滚",
+  "新世纪",
+  "新世纪-冥想音乐",
+  "新世纪-自然新世纪",
+  "摇滚",
+  "摇滚-独立摇滚",
+  "摇滚-根源摇滚",
+  "摇滚-后摇",
+  "摇滚-华丽摇滚",
+  "摇滚-经典摇滚",
+  "摇滚-垃圾摇滚",
+  "摇滚-蓝调摇滚",
+  "摇滚-另类摇滚",
+  "摇滚-流行摇滚",
+  "摇滚-梦幻流行",
+  "摇滚-迷幻摇滚",
+  "摇滚-民谣摇滚",
+  "摇滚-南方摇滚",
+  "摇滚-前卫摇滚",
+  "摇滚-日系摇滚",
+  "摇滚-软摇滚",
+  "摇滚-视觉摇滚",
+  "摇滚-室内流行",
+  "摇滚-说唱摇滚",
+  "摇滚-新迷幻",
+  "摇滚-学院摇滚",
+  "摇滚-艺术摇滚",
+  "摇滚-英伦摇滚",
+  "摇滚-硬摇滚",
+  "摇滚-噪音摇滚",
+  "原声带",
+  "原声带-布袋戏原声",
+  "原声带-电视剧原声",
+  "原声带-电影配乐",
+  "原声带-电影原声",
+  "原声带-动画片原声",
+  "原声带-广播剧原声",
+  "原声带-广告原声",
+  "原声带-纪录片原声",
+  "原声带-配乐",
+  "原声带-史诗音乐",
+  "原声带-手游原声",
+  "原声带-体育节目原声",
+  "原声带-音乐剧",
+  "原声带-游戏原声",
+  "原声带-主机游戏配乐",
+  "原声带-综艺原声",
+  "原声带-Disney",
+  "中国传统特色",
+  "中国传统特色-洞箫",
+  "中国传统特色-二胡",
+  "中国传统特色-古筝",
+  "中国传统特色-红色经典",
+  "中国传统特色-军旅歌曲",
+  "中国传统特色-马头琴",
+  "中国传统特色-民乐",
+  "中国传统特色-民族歌曲",
+  "中国传统特色-时代曲",
+  "中国传统特色-戏曲",
+  "中国传统特色-正能量",
+  "中国传统特色-中国艺术歌曲",
+  "R&B",
+  "R&B-当代R&B",
+  "R&B-都市流行",
+  "R&B-灵魂乐",
+  "R&B-流行灵魂乐",
+  "R&B-摩城音乐"
+];
+const palette=['#5d879d','#8b6d9f','#a87a5a','#679687','#a35e78'];let categories=definitions.map(x=>({...x}));
+let tracks=SEED_TRACKS.map(x=>({...x}));let home=new Set(definitions.filter(x=>x.defaultHome).map(x=>x.id));let overrides={};let selected='__all__',editId=null,current=null,sourceMode='historical';const audioFiles=new Map();
+const STORE='hyplayer-music-atlas-v1:';let playlistId='';let playbackPending=false;
+let prefs={theme:'system',accent:'green',showOther:true,autoPlay:true};
+try{Object.assign(prefs,JSON.parse(localStorage.getItem('hyplayer-atlas:preferences')||'{}'))}catch{}
+const systemTheme=matchMedia('(prefers-color-scheme: dark)');
+function applyTheme(){const dark=prefs.theme==='dark'||(prefs.theme==='system'&&systemTheme.matches);document.documentElement.dataset.theme=dark?'dark':'light';const colors={green:dark?['#c6dec9','#152b24']:['#28634f','#ffffff'],blue:dark?['#acd3f5','#18364e']:['#285f91','#ffffff'],purple:dark?['#d5bdeb','#372447']:['#714593','#ffffff'],amber:dark?['#ecd29b','#453416']:['#865d1b','#ffffff']};const [bg,ink]=colors[prefs.accent]||colors.green;document.documentElement.style.setProperty('--accent',bg);document.documentElement.style.setProperty('--accent-ink',ink)}
+function savePrefs(){try{localStorage.setItem('hyplayer-atlas:preferences',JSON.stringify(prefs))}catch{msg('设置无法保存，请检查浏览器存储权限')}}
+applyTheme();systemTheme.addEventListener('change',applyTheme);
+let songLimit=80;
+
+function normalize(x){return String(x).toLowerCase().normalize('NFKC').replace(/\.[^\.]*$/,'').replace(/[^\p{L}\p{N}]+/gu,'')}
+function includes(s,items){return items.some(x=>s.includes(x))}
+function anyRE(t,pattern){return new RegExp(pattern,'i').test(t)}
+const artistGroups={
+'g-rock':['x japan','pink floyd','guns n','queen','led zeppelin','green day','nightwish','beyond','coldplay','the beatles','eagles','deep purple','linkin park','metallica','nirvana','ac/dc','oasis','bon jovi','林肯公园','伍佰','崔健','大黒摩季','大黑摩季','许巍','汪峰','五月天','u2','scorpions','radiohead','black sabbath','lynyrd skynyrd','dire straits','张雨生'],
+'g-classical':['j. s. bach','j.s.bach','johann sebastian bach','bach','chopin','mozart','beethoven','debussy','vivaldi','schubert','tchaikovsky','dvořák','dvorak','ravel','satie','smetana','shostakovich','mahler','brahms','handel','haydn','liszt','rachmaninoff','柴可夫斯基','肖邦','巴赫','贝多芬','维瓦尔第','德彪西','久石让','andre rieu'],
+'g-pop':['michael jackson','adele','sia','ed sheeran','taylor swift','张雨生','李宗盛','林志炫','王菲','周杰伦','周传雄','陈奕迅','邓紫棋','张学友','刘德华','许嵩','韩红','王力宏','席琳','celine dion','westlife','whitney houston','beyoncé','bruno mars','lana del rey','张信哲','张碧晨','邓丽君'],
+'g-folk':['bob dylan','simon & garfunkel','john denver','leonard cohen','johnny cash','joan baez','neil young','赵雷','宋冬野','陈鸿宇','李志','万晓利','马頔','朴树','许巍','张悬','陈绮贞','radical face','russian red','frank turner','gregory alan isakov'],
+'g-trad':['墨明棋妙','银临','河图','汐音社','云之泣','黄霑','黄沾','蔡志展','骆集益','宋飞','谭盾','宗次郎','陈勋奇','声无哀乐','聲無哀樂','胡彦斌'],
+'g-electronic':['alan walker','avicii','daft punk','moby','axero','deadmau5','skrillex','marshmello','the chainsmokers','hatsune miku','初音ミク','初音未来','deco*27','porter robinson','imagine dragons'],
+'g-ambient':['enya','secret garden','yiruma','kitaro','喜多郎','s.e.n.s.','ó lafur arnalds','ólafur arnalds','max richter','ludovico einaudi','yanni','久石让','宗次郎','神思者','kenny g','ambient','brian eno','sigur rós'],
+'g-jazz':['miles davis','nina simone','ella fitzgerald','louis armstrong','john coltrane','norah jones','b.b. king','eric clapton','billie holiday','chet baker','frank sinatra']};
+function ensureGenres(){for(const t of tracks)for(const name of (t.styles||[]).map(s=>s.split('-')[0])){const id='nc:'+name;if(!categories.some(c=>c.id===id)){categories.push({id,dim:'genre',name,color:palette[categories.length%palette.length],defaultHome:true});home.add(id)}}}
+function genreDetail(t){const raw=(t.styles||[]).join('、');return '网易云细分曲风：'+(raw||({known:'未提供',pending:'正在查询',failed:'查询失败，可返回后重试'}[t.genreState]||'尚未查询'))+(raw&&t.genreState==='failed'?'（更新失败，显示缓存）':'')}
+function msg(s){const e=$('toast');e.textContent=s;e.classList.add('on');clearTimeout(msg.t);msg.t=setTimeout(()=>e.classList.remove('on'),3100)}
+const cnt=id=>tracks.filter(t=>tagsOf(t).includes(id)).length;
+function treemap(gs,x,y,w,h,out=[]){if(!gs.length)return out;if(gs.length===1){out.push({...gs[0],x,y,w,h});return out}let sum=gs.reduce((a,b)=>a+b.count,0),k=1,s=gs[0].count;while(k<gs.length-1&&s+gs[k].count<=sum/2){s+=gs[k].count;k++}const a=gs.slice(0,k),b=gs.slice(k),rate=a.reduce((v,c)=>v+c.count,0)/sum;if(w>=h){treemap(a,x,y,w*rate,h,out);treemap(b,x+w*rate,y,w*(1-rate),h,out)}else{treemap(a,x,y,w,h*rate,out);treemap(b,x,y+h*rate,w,h*(1-rate),out)}return out}
+function renderSongs(){const q=$('search').value.trim().toLowerCase(),root=$('tracks');root.replaceChildren();const arr=tracks.filter(t=>(matchesView(t))&&(t.title+' '+t.artist+' '+t.album).toLowerCase().includes(q));const cap=arr.slice(0,songLimit);if(!arr.length){root.innerHTML='<p class="hint">没有匹配的歌曲</p>';return}for(const t of cap){const r=document.createElement('div');r.className='song';const info=document.createElement('div');info.className='song-info';const ti=document.createElement('div');ti.className='song-title';ti.textContent=t.title;ti.title=t.title;const ar=document.createElement('div');ar.className='song-artist';ar.textContent=t.artist+' · '+t.album;info.append(ti,ar);const edit=document.createElement('button');edit.textContent='详情';edit.onclick=()=>editSong(t.id);const pick=document.createElement('button');pick.textContent='播放';pick.onclick=()=>play(t);r.append(info,edit,pick);root.append(r)}if(arr.length>cap.length){const p=document.createElement('button');p.className='btn more';p.textContent=`展开更多（${cap.length} / ${arr.length}）`;p.onclick=()=>{songLimit+=80;renderSongs()};root.append(p)}}
+function source(t){return audioFiles.get(normalize(t.title))||t.audioUrl||''}
+function play(t){
+if(playbackPending)return;
+if(!window.chrome?.webview||!playlistId){msg('请在 HyPlayer 歌单页打开音乐地图');return}
+const queue=tracks.filter(x=>matchesView(x));
+if(!queue.some(x=>x.id===t.id))return;
+playbackPending=true;setTimeout(()=>playbackPending=false,15000);
+window.chrome.webview.postMessage({type:'play',playlistId,ids:queue.map(x=>x.id),startId:t.id});
+msg('正在交给 HyPlayer 播放…');
+}
+function random(){let sub=tracks.filter(t=>matchesView(t));if(!sub.length){msg('当前类别没有歌曲');return}play(sub[0])}
+function csvRead(s){const rows=[],sep=(s.split(/\r?\n/)[0]||'').includes('\t')?'\t':',';let str='',row=[],quoted=false;for(let i=0;i<s.length;i++){let c=s[i];if(quoted){if(c==='"'&&s[i+1]==='"'){str+='"';i++}else if(c==='"')quoted=false;else str+=c}else if(c==='"')quoted=true;else if(c===sep){row.push(str);str=''}else if(c==='\r'||c==='\n'){if(c==='\r'&&s[i+1]==='\n')i++;row.push(str);if(row.some(Boolean))rows.push(row);row=[];str=''}else str+=c}row.push(str);if(row.some(Boolean))rows.push(row);return rows}
+function parseCsv(s){const rs=csvRead(s);const h=rs.shift().map(x=>x.trim().replace(/^\ufeff/,'').toLowerCase());const find=alts=>h.findIndex(x=>alts.includes(x));const ti=find(['歌名','歌曲','曲名','title','song','name']),ai=find(['歌手','artist','singer','艺人']),al=find(['专辑','album']),id=find(['序号','id','index']),au=find(['音频url','audio_url','url']);if(ti<0)throw Error('需要「歌名」或 title 列');return rs.map((r,i)=>({id:i+1,title:r[ti]||'',artist:r[ai]||'',album:r[al]||'',audioUrl:au<0?'':r[au]})).filter(x=>x.title)}
+async function importFile(f){try{const s=await f.text();let obj=f.name.endsWith('.json')?JSON.parse(s):parseCsv(s);if(!Array.isArray(obj)&&obj&&Array.isArray(obj.tracks)){let state=obj;if(state.preferences){const p=state.preferences;if(['system','light','dark'].includes(p.theme))prefs.theme=p.theme;if(['green','blue','purple','amber'].includes(p.accent))prefs.accent=p.accent;if(typeof p.showOther==='boolean')prefs.showOther=p.showOther;if(typeof p.autoPlay==='boolean')prefs.autoPlay=p.autoPlay;applyTheme();savePrefs();$('themeMode').value=prefs.theme;$('accent').value=prefs.accent;$('showOther').checked=prefs.showOther;$('autoPlay').checked=prefs.autoPlay}tracks=state.tracks.map((x,i)=>({...x,id:i+1}));categories=Array.isArray(state.categories)?state.categories:definitions.map(x=>({...x}));home=new Set(state.home||definitions.filter(x=>x.defaultHome).map(x=>x.id));overrides=state.overrides||{};sourceMode='imported'}else{if(!Array.isArray(obj))throw Error('JSON 须是歌曲数组或本页面导出的数据');tracks=obj.map((x,i)=>({id:i+1,title:String(x.title||x.歌名||''),artist:String(x.artist||x.歌手||''),album:String(x.album||x.专辑||''),audioUrl:String(x.audioUrl||'')})).filter(x=>x.title);overrides={};sourceMode='imported'}if(!tracks.length)throw Error('无有效歌曲');selected=categories[0].id;editId=null;$('editor').hidden=true;save();render();choose(selected);msg(`已导入 ${tracks.length} 首歌曲；标签为自动初判，可手动校正`)}catch(e){msg('导入失败：'+e.message)}}
+$('importData').onchange=e=>{if(e.target.files?.[0])importFile(e.target.files[0]);e.target.value=''};
+$('importAudio').onchange=e=>{for(const f of e.target.files){const key=normalize(f.name),old=audioFiles.get(key);if(old)URL.revokeObjectURL(old);audioFiles.set(key,URL.createObjectURL(f))}msg(`已载入 ${e.target.files.length} 个音频文件；歌曲名与文件名需基本一致`);e.target.value=''};
+$('exportBtn').onclick=download;
+$('resetBtn').onclick=()=>{if(!confirm('清除本机音乐地图的人工分类与主页选择？'))return;overrides={};expansion={genre:'auto',mood:'auto',source:'auto'};filters={genre:new Set(),mood:new Set(),source:new Set()};selected='__all__';categories=definitions.map(x=>({...x}));home=new Set(definitions.filter(x=>x.defaultHome).map(x=>x.id));ensureGenres();save();render()};
+$('recommendBtn').onclick=()=>{expansion[activeDim]='auto';render();save();msg('当前维度已按累计 90% 票数展开；不超过 10 类时全部展开')};
+$('newBtn').onclick=()=>{const name=$('newName').value.trim(),dim=$('newDim').value;if(!name){msg('请先输入类别名称');return}if(categories.some(c=>c.name===name)){msg('同名类别已存在');return}const id='custom-'+Date.now().toString(36),color=palette[categories.length%palette.length];categories.push({id,dim,name,color,defaultHome:false});home.add(id);expansion[dim]='custom';$('newName').value='';save();render();msg('已创建类别。初始计数为 0，请逐首将歌曲加入此类别。')};
+$('search').oninput=()=>{songLimit=80;renderSongs()};$('randomBtn').onclick=random;$('allBtn').onclick=()=>{choose('__all__');$('search').focus()};$('unclassifiedBtn').onclick=()=>{choose('__unclassified__');$('search').focus()};
+$('restoreAuto').onclick=()=>{if(editId===null)return;delete overrides[editId];save();render();editSong(editId)};
+$('settingsBtn').onclick=()=>$('settings').showModal();$('closeSettings').onclick=()=>$('settings').close();$('closeDetails').onclick=()=>$('songDetails').close();
+$('themeMode').value=prefs.theme;$('accent').value=prefs.accent;$('showOther').checked=prefs.showOther;$('autoPlay').checked=prefs.autoPlay;
+$('themeMode').onchange=e=>{prefs.theme=e.target.value;applyTheme();savePrefs()};$('accent').onchange=e=>{prefs.accent=e.target.value;applyTheme();savePrefs()};$('showOther').onchange=e=>{prefs.showOther=e.target.checked;savePrefs();render()};$('autoPlay').onchange=e=>{prefs.autoPlay=e.target.checked;savePrefs()};
+
+function legacyTags(t){const a=(t.artist||'').toLowerCase(),n=(t.title||'').toLowerCase(),al=(t.album||'').toLowerCase(),s=[a,n,al].join(' '),g=[];const put=x=>{if(!g.includes(x))g.push(x)};
+for(const [id,names] of Object.entries(artistGroups))if(includes(a,names))put(id);
+if(anyRE(s,'symphony|sonata|concerto|prelude|nocturne|etude|waltz|fugue|suite no\\.|交响|奏鸣|协奏|赋格|圆舞曲|练习曲|小夜曲|古典精选'))put('g-classical');
+if(anyRE(s,'古琴|二胡|琵琶|箫声|古风|国风|民族乐|传统曲|武侠|仙剑奇侠传|天龙八部|笑傲江湖|琴箫'))put('g-trad');
+if(anyRE(s,'folk|country|乡村民谣|民谣'))put('g-folk');if(anyRE(s,'electronica|electronic|synthwave|techno|trance|house music|edm|vocaloid|ボカロ'))put('g-electronic');
+if(anyRE(s,'piano solo|piano collections|钢琴独奏|钢琴版|new age|ambient|nature sounds|冥想|纯音乐'))put('g-ambient');
+if(anyRE(s,'blues|jazz|爵士|蓝调'))put('g-jazz');
+// 来源由专辑/歌名明确证据决定，避免根据气质猜测。
+if(anyRE(s,'game soundtrack|game ost|video game|ゲーム|游戏原声|电玩配乐|游戏《|游戏《|the elder scrolls|skyrim|witcher 3|巫师3|魔兽世界|warcraft|final fantasy|最终幻想|上古卷轴|刺客信条|assassin.s creed|the last of us|荒野大镖客|red dead redemption|仙剑奇侠传|英雄联盟|league of legends|undertale|war of mine|nier automata|尼尔|hollow knight|塞尔达|zelda|kameo: elements'))put('s-game');
+if(anyRE(s,'film soundtrack|motion picture|original score|tv series|movie soundtrack|电视剧《|电影《|电影原声|影视原声|电视原声|westworld|the lord of the rings|lord of the rings|指环王|霍比特人|hobbit|game of thrones|权力的游戏|the last samurai|末代武士|西部世界|加勒比海盗|pirates of the caribbean|哈利波特|harry potter|interstellar|星际穿越|天空之城|千与千寻|名探偵コナン|电影插曲'))put('s-screen');
+if(anyRE(s,'アニメ|anime|动漫|动画|二次元|acg|vocaloid|ボカロ|初音ミク|初音未来|舞-hime|千本桜|千本樱|黑执事|fate/stay night|高达|gundam|attack on titan|进击的巨人'))put('s-anime');
+if(anyRE(s,'\\blive\\b|演唱会|现场版|现场录音|concert recording|live at|live version|现场演奏|录音现场'))put('s-live');
+if(anyRE(s,'epic|trailer music|sovngarde|rohan|theoden|théoden|lord of the rings|riders of rohan|conquest of paradise|victory|battle theme|far horizons|warrior|凯旋|史诗|远征|英雄的|英勇|壮丽|战争交响'))put('m-epic');
+if(anyRE(s,'lullaby|quiet|peaceful|silence|silent|calm|serenity|tranquil|sleep|gentle|月光|静谧|安静|宁静|空灵|梦境|催眠|摇篮曲|kiss the rain|clair de lune|river flows in you'))put('m-calm');
+if(anyRE(s,'sorrow|sadness|lonely|loneliness|broken dream|heartbreak|lament|requiem|farewell|endless rain|tears|unforgiven|regret|遗憾|悲伤|哀伤|悲歌|爱殇|离别|再见|伤心|怀念|孤独|漠河舞厅|山丘'))put('m-sad');
+if(anyRE(s,'victory|battle|hero|unstopppable|unstoppable|fight|rise up|glory|triumph|强者|出征|斗志|热血|燃烧|胜利|英雄|海阔天空'))put('m-energy');
+if(anyRE(s,'road|journey|voyage|travel|traveling|travelling|far away|highway|wanderer|homeward|take me home|乡愁|旅人|旅途|远方|归途|故乡|旅行|公路|启程|远行'))put('m-travel');
+if(anyRE(s,'sacred|holy|hymn|prayer|gregorian|church|amen|cathedral|god bless|天主|圣母|圣咏|赞美诗|圣歌|礼拜|祈祷|咏叹|三净咒'))put('m-sacred');
+if(anyRE(s,'dark|shadow|nightmare|demon|blackness|haunted|mystery|深渊|黑暗|恶魔|梦魇|恐惧|诡异|神秘'))put('m-dark');
+if(anyRE(s,'happy|joy|funny|party|good luck|are you ok|好运来|欢乐|搞笑|逗趣|欢庆|喜庆|好运|never gonna give you up'))put('m-happy');
+// 种子数据自动标签最多 5 个（同维度尽量分散）。
+return g}
+
+// Per-dimension labels and selections. The map always describes the full playlist.
+let activeDim='genre',expansion={genre:'auto',mood:'auto',source:'auto'};
+let filters={genre:new Set(),mood:new Set(),source:new Set()},tagCache=new WeakMap();
+let editorOnly=false,editDim='genre';
+const moodNames=['放松','治愈','悲伤','平静','活力','思念','浪漫','孤独','欢快','苦情','狂欢','热血励志','自信','抑郁','甜蜜'];
+for(const [i,name] of moodNames.entries()){const c={id:'mood:'+name,dim:'mood',name,color:palette[i%palette.length],defaultHome:true};definitions.push(c);categories.push({...c})}
+for(const name of genreCatalog){if(!name.includes('-'))continue;const c={id:'nc:'+name,dim:'genre',name,parent:'nc:'+name.split('-')[0],color:palette[0]};definitions.push(c);categories.push({...c})}
+const dimOf=id=>categories.find(c=>c.id===id)?.dim;
+const dimTags=(t,dim=activeDim)=>tagsOf(t).filter(id=>dimOf(id)===dim);
+function autoTags(t){return [...new Set([...(t.styles||[]).map(s=>'nc:'+s),...(t.emotions||[]).filter(s=>moodNames.includes(s)).map(s=>'mood:'+s),...legacyTags(t).filter(id=>id.startsWith('s-'))])]}
+function rawTagsOf(t,dim){const manual=overrides[t.id]||{};return [...new Set(Object.hasOwn(manual,dim)?manual[dim]:autoTags(t).filter(id=>dimOf(id)===dim))].filter(id=>dimOf(id)===dim)}
+function tagsOf(t){if(tagCache.has(t))return tagCache.get(t);const result=[...new Set(dimensions.flatMap(d=>rawTagsOf(t,d.id)).map(id=>categories.find(c=>c.id===id)?.parent||id))];tagCache.set(t,result);return result}
+function stateDocument(){return {schema:4,categories,home:[...home],overrides,activeDim,expansion}}
+function save(){try{const state=stateDocument();localStorage.setItem(STORE+'session',JSON.stringify(state));window.chrome?.webview?.postMessage({type:'saveState',state})}catch{msg('分类保存失败')}}
+function applyHostState(state){if(!state||state.schema!==4||!Array.isArray(state.categories))return;const changed=JSON.stringify(state.overrides)!==JSON.stringify(overrides);localStorage.setItem(STORE+'session',JSON.stringify(state));const currentDim=activeDim;restore();activeDim=currentDim;render();if(changed&&editId&&($('songDetails').open||editorOnly))editSong(editId)}
+function restore(){try{
+ const raw=localStorage.getItem(STORE+'session'),s=JSON.parse(raw||'null');if(!s||!Array.isArray(s.categories))return;
+ let old=null;try{old=JSON.parse(localStorage.getItem(STORE+'phase0-backup')||'null')}catch{}
+ const known=new Map([...legacyDefinitions,...(old?.categories||[])].map(c=>[c.id,c]));
+ const merged=new Map(definitions.map(c=>[c.id,{...c}]));
+ const used=new Set(Object.values(s.overrides||{}).flatMap(v=>Array.isArray(v)?v:Object.values(v).flat()));
+ for(const c of [...(old?.categories||[]),...s.categories]){if((c.id.startsWith('g-')||c.id.startsWith('m-'))&&!used.has(c.id))continue;const dim=dimensions.some(d=>d.id===c.dim)?c.dim:known.get(c.id)?.dim||'genre';merged.set(c.id,{...c,dim})}
+ categories=[...merged.values()];home=new Set(s.home||[]);
+ if(s.schema>=3){overrides=s.overrides||{};activeDim=dimensions.some(d=>d.id===s.activeDim)?s.activeDim:'genre';expansion={...expansion,...s.expansion};return}
+ // Preserve original bytes before migrating, including explicit empty edits.
+ if(!localStorage.getItem(STORE+'before-dimensions-v3'))localStorage.setItem(STORE+'before-dimensions-v3',raw);
+ overrides={};
+ const migrate=(entries,fromBackup)=>{for(const [id,labels] of Object.entries(entries||{})){if(!Array.isArray(labels))continue;const value=overrides[id]||{};for(const d of dimensions){if(fromBackup&&d.id==='genre')continue;const ids=[...new Set(labels.filter(x=>dimOf(x)===d.id))];if(ids.length)value[d.id]=ids}if(!labels.length){for(const d of dimensions)if(!fromBackup||d.id!=='genre')value[d.id]=[]}overrides[id]=value}};
+ migrate(old?.overrides,true);migrate(s.overrides,false);
+ save();
+ }catch{msg('读取分类设置失败，原设置未清除')}}
+function counts(){const result=Object.fromEntries(categories.map(c=>[c.id,0]));for(const t of tracks)for(const id of tagsOf(t))result[id]++;return result}
+function ranked(dim,n=counts()){return categories.filter(c=>c.dim===dim&&n[c.id]>0).sort((a,b)=>n[b.id]-n[a.id]||a.name.localeCompare(b.name,'zh-CN'))}
+function recommend(dim,n=counts()){const all=ranked(dim,n),total=all.reduce((sum,c)=>sum+n[c.id],0);let sum=0;return all.filter(c=>{const include=all.length<=10||sum<total*.9;if(include)sum+=n[c.id];return include}).map(c=>c.id)}
+function applyExpansion(){const n=counts();for(const d of dimensions)if(expansion[d.id]==='auto'){for(const c of categories.filter(c=>c.dim===d.id))home.delete(c.id);for(const id of recommend(d.id,n))home.add(id)}}
+function groupData(){const n=counts(),groups=ranked(activeDim,n).filter(c=>home.has(c.id)).map(c=>({...c,count:n[c.id],songs:n[c.id]}));let hidden=0,hiddenSongs=0;const missing={known:0,pending:0,failed:0};for(const t of tracks){const ids=dimTags(t),votes=ids.filter(id=>!home.has(id)).length;hidden+=votes;if(votes)hiddenSongs++;if(!ids.length)missing[tagState(t,activeDim)]++}if(hidden)groups.push({id:'__other__',name:'其它',color:'#74798b',count:hidden,songs:hiddenSongs});for(const [state,id,name] of [['known','__unclassified__','未分类'],['pending','__pending__','待查询'],['failed','__failed__','查询失败']])if(missing[state])groups.push({id,name,color:'#65717e',count:missing[state],songs:missing[state]});return groups.sort((a,b)=>b.count-a.count||a.name.localeCompare(b.name,'zh-CN'))}
+function matchesFilters(t){return dimensions.every(d=>!filters[d.id].size||dimTags(t,d.id).some(id=>filters[d.id].has(id)))}
+function matchesView(t){if(!matchesFilters(t))return false;const ids=dimTags(t);if(selected==='__all__')return true;if(selected==='__other__')return ids.some(id=>!home.has(id));const state={__unclassified__:'known',__pending__:'pending',__failed__:'failed'}[selected];return state?!ids.length&&tagState(t,activeDim)===state:ids.includes(selected)}
+function renderMap(){const groups=groupData(),root=$('map'),sum=groups.reduce((v,g)=>v+g.count,0);root.replaceChildren();if(!groups.length){root.textContent='正在等待歌单…';return}for(const g of treemap(groups,0,0,1,1)){const b=document.createElement('button');b.className='tile'+(g.id===selected?' selected':'')+(g.w*g.h<.04?' tiny':g.w*g.h<.09?' small':'');b.style.cssText=`top:${g.y*100}%;left:${g.x*100}%;width:${g.w*100}%;height:${g.h*100}%;background:${g.color}`;b.dataset.category=g.id;b.dataset.votes=g.count;b.dataset.share=g.count/sum;const name=document.createElement('div');name.className='name';name.textContent=g.name;const bottom=document.createElement('div');bottom.innerHTML=`<div class="size">${g.songs}<small> 首</small></div><div class="cover">${g.count} 票 · ${(g.count/sum*100).toFixed(1)}%</div>`;b.append(name,bottom);b.setAttribute('aria-pressed',String(g.id===selected));b.title=`${g.name}：涉及 ${g.songs} 首，${g.count} 票，当前维度总票数占比 ${(g.count/sum*100).toFixed(1)}%`;b.onclick=()=>choose(g.id,true);root.append(b)}}
+function renderChooser(){const n=counts(),root=$('groups');root.replaceChildren();const d=dimensions.find(d=>d.id===activeDim),row=document.createElement('div');row.className='group-row';row.style.setProperty('--group',d.color);const label=document.createElement('div');label.className='group-name';label.textContent=d.name;const list=document.createElement('div');list.className='type-list';for(const c of categories.filter(c=>c.dim===activeDim&&!c.parent).sort((a,b)=>(n[b.id]||0)-(n[a.id]||0)||a.name.localeCompare(b.name,'zh-CN'))){const b=document.createElement('button');b.className='type'+(home.has(c.id)?' selected':'');b.style.setProperty('--type',c.color);b.innerHTML=`<span class="dot"></span><span class="type-name"></span><span class="cnt">${n[c.id]||0} 首</span><span class="mark">${home.has(c.id)?'✓':'＋'}</span>`;b.querySelector('.type-name').textContent=c.name;b.setAttribute('aria-pressed',String(home.has(c.id)));b.dataset.category=c.id;b.onclick=()=>{expansion[activeDim]='custom';home.has(c.id)?home.delete(c.id):home.add(c.id);if(selected===c.id&&!home.has(c.id))selected='__other__';render();save()};list.append(b)}row.append(label,list);root.append(row);$('recommendBtn').textContent=expansion[activeDim]==='auto'?'自动展开 · 90%':'系统推荐 · 90%'}
+function renderDimensions(){const tabs=$('dimensionTabs');tabs.replaceChildren();for(const d of dimensions){const b=document.createElement('button');b.className='btn dimension-tab';b.textContent=d.name;b.dataset.dimension=d.id;b.setAttribute('aria-pressed',String(d.id===activeDim));b.onclick=()=>{activeDim=d.id;selected='__all__';songLimit=80;render();save()};tabs.append(b)}const n=counts(),list=ranked(activeDim,n),total=list.reduce((s,c)=>s+n[c.id],0),shown=list.filter(c=>home.has(c.id)).reduce((s,c)=>s+n[c.id],0),all=groupData().reduce((s,c)=>s+c.count,0);$('mapSummary').textContent=`整个歌单 ${tracks.length} 首 · 当前维度 ${all} 总票（含未分类） · 已展开 ${total?(shown/total*100).toFixed(1):'0'}% 分类票数 · 折叠不改变总票数`;
+ const root=$('filterGroups');root.replaceChildren();for(const d of dimensions){const row=document.createElement('div');row.className='filter-row';const name=document.createElement('strong');name.textContent=d.name;row.append(name);for(const c of categories.filter(c=>c.dim===d.id&&(n[c.id]>0||filters[d.id].has(c.id))).sort((a,b)=>(n[b.id]||0)-(n[a.id]||0))){const b=document.createElement('button');b.className='chip'+(filters[d.id].has(c.id)?' on':'');b.textContent=c.name+' '+(n[c.id]||0);b.dataset.filter=c.id;b.setAttribute('aria-pressed',String(filters[d.id].has(c.id)));b.onclick=()=>{filters[d.id].has(c.id)?filters[d.id].delete(c.id):filters[d.id].add(c.id);selected='__all__';songLimit=80;render()};row.append(b)}root.append(row)}const count=tracks.filter(matchesFilters).length,labels=dimensions.filter(d=>filters[d.id].size).map(d=>[...filters[d.id]].map(id=>categories.find(c=>c.id===id)?.name).join(' / '));$('filterSummary').textContent=labels.length?'· '+labels.join(' ＋ ')+' · '+count+' 首':'· 未限制';}
+function renderStats(){const all=counts();$('sAll').textContent=tracks.length.toLocaleString('zh-CN');$('sAssigned').textContent=categories.filter(c=>c.dim===activeDim).reduce((s,c)=>s+all[c.id],0);$('sCovered').textContent=tracks.filter(t=>dimTags(t).length).length;$('sHome').textContent=groupData().length;$('sVerified').textContent=tracks.filter(t=>Object.hasOwn(overrides[t.id]||{},activeDim)).length;$('sourceBadge').textContent='曲风与气质：网易云；来源：本地规则初判。手动修改只覆盖同维度。'}
+function choose(id,clicked=false){selected=id;songLimit=80;const name={__all__:'全部歌曲',__other__:'其它',__unclassified__:'未分类',__pending__:'待查询',__failed__:'查询失败'}[id]||categories.find(c=>c.id===id)?.name||'全部歌曲';$('detailTitle').textContent=name;$('detailMeta').textContent=`${tracks.filter(matchesView).length} 首 · ${dimensions.find(d=>d.id===activeDim).name}维度`+(dimensions.some(d=>filters[d.id].size)?' · 已应用组合筛选':'');renderMap();renderSongs();if(clicked&&$('autoPlay').checked)random();if(clicked&&innerWidth<950)$('detailTitle').scrollIntoView({behavior:'smooth',block:'start'})}
+function setDimensionTags(t,dim,ids){overrides[t.id]={...(overrides[t.id]||{}),[dim]:[...new Set(ids)]};render();save()}
+function resetDimension(t,dim){if(overrides[t.id]){delete overrides[t.id][dim];if(!Object.keys(overrides[t.id]).length)delete overrides[t.id]}render();save()}
+function render(){ensureFineGenres();tagCache=new WeakMap();if(editorOnly)return;if(tracks.length)applyExpansion();renderStats();renderDimensions();renderChooser();choose(selected)}
+function download(){const data={schema:3,tracks,categories,home:[...home],overrides,activeDim,expansion,preferences:prefs},blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='music_atlas_dimensions_'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),2000)}
+$('clearFilters').onclick=()=>{filters={genre:new Set(),mood:new Set(),source:new Set()};selected='__all__';render()};
+
+function ensureFineGenres(){for(const t of tracks)for(const name of t.styles||[]){const root='nc:'+name.split('-')[0];if(!categories.some(c=>c.id===root))categories.push({id:root,dim:'genre',name:name.split('-')[0],color:palette[categories.length%palette.length]});const id='nc:'+name;if(!categories.some(c=>c.id===id))categories.push({id,dim:'genre',name,parent:root,color:palette[categories.length%palette.length]})}}
+function tagState(t,dim){return Object.hasOwn(overrides[t.id]||{},dim)||dim==='source'?'known':dim==='genre'?t.genreState||'pending':t.emotionState||'pending'}
+function providerText(t,dim){const values=dim==='genre'?t.styles||[]:t.emotions||[],state=dim==='genre'?t.genreState:t.emotionState;return values.length?values.join('、')+(state==='failed'?'（更新失败，显示缓存）':''):({known:'未提供',pending:'正在查询',failed:'查询失败'}[state]||'尚未查询')}
+let editQuery='';
+function editSong(id){
+ if(editId!==id)editQuery='';
+ editId=id;const t=tracks.find(t=>t.id===id);if(!t)return;
+ $('editor').hidden=false;if(!editorOnly&&!$('songDetails').open)$('songDetails').showModal();
+ $('editTitle').textContent=t.title+' — '+t.artist;
+ const ed=$('tagEditor');ed.replaceChildren();
+ const tabs=document.createElement('div');tabs.className='tag-tabs';for(const d of dimensions){const b=document.createElement('button');b.className='btn'+(editDim===d.id?' primary':'');b.textContent=d.name;b.dataset.editorDim=d.id;b.setAttribute('aria-pressed',String(editDim===d.id));b.onclick=()=>{editDim=d.id;editQuery='';editSong(id)};tabs.append(b)}
+ const provenance=document.createElement('span');provenance.className='hint tag-provenance';provenance.id='tagProvenance';provenance.textContent=editDim==='genre'?'网易云细分：'+providerText(t,'genre'):editDim==='mood'?'网易云情绪：'+((t.emotions||[]).length?'已用 ★ 标记':providerText(t,'mood')):'来源：本地规则初判';tabs.append(provenance);ed.append(tabs);
+ const assigned=rawTagsOf(t,editDim),effective=new Set(dimTags(t,editDim));
+ const provider=new Set((editDim==='genre'?t.styles||[]:editDim==='mood'?(t.emotions||[]).filter(x=>moodNames.includes(x)):[]).map(s=>(editDim==='genre'?'nc:':'mood:')+s));
+ const highlighted=c=>c.parent?assigned.includes(c.id):effective.has(c.id);
+ const starred=c=>provider.has(c.id)||(!c.parent&&[...provider].some(id=>categories.find(x=>x.id===id)?.parent===c.id));
+ const toggle=cid=>{const c=categories.find(c=>c.id===cid),next=new Set(rawTagsOf(t,editDim));if(highlighted(c)){for(const id of next)if(id===cid||(!c.parent&&categories.find(x=>x.id===id)?.parent===cid))next.delete(id)}else{if(c.parent)next.delete(c.parent);next.add(cid)}setDimensionTags(t,editDim,[...next]);editSong(id)};
+ const caption=document.createElement('p');caption.className='hint tag-caption';caption.textContent='高亮＝当前生效'+(editDim==='source'?'':' · ★＝网易云识别')+' · '+(Object.hasOwn(overrides[t.id]||{},editDim)?'手动修改优先':'自动分类')+(!assigned.length?' · '+(tagState(t,editDim)==='known'?'未分类':tagState(t,editDim)==='failed'?'查询失败':'待查询'):'');ed.append(caption);
+ const search=document.createElement('input');search.type='search';search.className='search';search.id='tagSearch';search.value=editQuery;search.placeholder=editDim==='genre'?'搜索大类或细类，如：后摇、日本流行、民乐':'搜索标签';search.setAttribute('aria-label','搜索分类');ed.append(search);
+ const results=document.createElement('div');results.className='tag-search-results';results.id='tagResults';ed.append(results);
+ function showResults(){const q=search.value.trim().toLowerCase();results.replaceChildren();const choices=categories.filter(c=>c.dim===editDim&&!c.id.startsWith('g-')&&(q?c.name.toLowerCase().includes(q):!c.parent));for(const c of choices.sort((a,b)=>a.name.localeCompare(b.name,'zh-CN')).slice(0,80)){const b=document.createElement('button');b.className='chip'+(highlighted(c)?' on':'');b.textContent=c.name+(starred(c)?' ★':'');b.dataset.editCategory=c.id;b.dataset.provider=String(starred(c));b.setAttribute('aria-pressed',String(highlighted(c)));b.title=c.name+(starred(c)?' · 网易云识别':'')+(highlighted(c)?' · 当前生效':'');b.onclick=()=>toggle(c.id);results.append(b)}if(!choices.length)results.textContent='没有匹配类别，可在下面添加自定义标签';}
+ search.oninput=()=>{editQuery=search.value;showResults()};showResults();
+ const tools=document.createElement('div');tools.className='tag-tools';const reset=document.createElement('button');reset.className='btn';reset.textContent='恢复此维度自动标签';reset.dataset.resetDimension=editDim;reset.onclick=()=>{resetDimension(t,editDim);editSong(id)};const clear=document.createElement('button');clear.className='btn';clear.textContent='清空此维度';clear.onclick=()=>{setDimensionTags(t,editDim,[]);editSong(id)};tools.append(reset,clear);if(editorOnly&&(t.genreState==='failed'||t.emotionState==='failed')){const retry=document.createElement('button');retry.className='btn';retry.textContent='重试标签查询';retry.onclick=()=>window.chrome?.webview?.postMessage({type:'retryTags'});tools.append(retry)}ed.append(tools);
+ const custom=document.createElement('details');const heading=document.createElement('summary');heading.textContent='添加自定义标签';custom.append(heading);const row=document.createElement('div');row.className='tag-create';const input=document.createElement('input');input.className='search';input.maxLength=40;input.placeholder='新标签名称';input.setAttribute('aria-label','自定义标签名称');const parent=document.createElement('select');parent.className='btn';parent.setAttribute('aria-label','所属地图大类');const empty=document.createElement('option');empty.value='';empty.textContent='独立地图类别';parent.append(empty);if(editDim==='genre')for(const c of categories.filter(c=>c.dim==='genre'&&!c.parent&&!c.id.startsWith('g-'))){const option=document.createElement('option');option.value=c.id;option.textContent=c.name;parent.append(option)}parent.hidden=editDim!=='genre';const add=document.createElement('button');add.className='btn';add.textContent='添加并选中';add.onclick=()=>{const name=input.value.trim();if(!name)return;const existing=categories.find(c=>c.dim===editDim&&c.name===name);if(existing){if(!assigned.includes(existing.id))toggle(existing.id);return}const cid='custom-'+Date.now().toString(36);categories.push({id:cid,name,dim:editDim,color:palette[categories.length%palette.length],...(parent.value?{parent:parent.value}:{})});setDimensionTags(t,editDim,[...assigned,cid]);editSong(id)};row.append(input,parent,add);custom.append(row);ed.append(custom);
+}
+
+for(const id of ['importData','importAudio'])$(id).closest('label').hidden=true;
+$('audio').hidden=true;document.querySelector('.player').hidden=true;
+// Scroll beneath the native player, with its 130-DIP clearance plus 24px breathing room.
+document.querySelector('.page').style.paddingBottom='154px';
+if(window.chrome?.webview){
+window.chrome.webview.addEventListener('message',event=>{
+ const m=event.data;
+ if(m.type==='configuration'){applyHostState(m.state);return}if(m.type==='playlist'){editorOnly=!!m.editor;document.body.classList.toggle('editor-only',editorOnly);
+  const samePlaylist=playlistId===m.playlistId;playlistId=m.playlistId;tracks=m.tracks.map(t=>({id:String(t.id),title:String(t.title),artist:String(t.artist),album:String(t.album),styles:Array.isArray(t.styles)?t.styles.filter(s=>typeof s==='string'):[],genreState:t.genreState||'pending',emotions:Array.isArray(t.emotions)?t.emotions.filter(s=>typeof s==='string'):[],emotionState:t.emotionState||'pending'}));
+  sourceMode='hyplayer';if(!samePlaylist){selected='__all__';$('search').value=''}
+  $('playlistName').textContent=m.name;ensureGenres();render();save();if(editorOnly&&tracks.length)editSong(tracks[0].id);
+ }else if(m.type==='genres'&&m.playlistId===playlistId){
+ const changes=new Map(m.tracks.map(t=>[String(t.id),t]));for(const t of tracks){const u=changes.get(t.id);if(u){t.styles=Array.isArray(u.styles)?u.styles.filter(s=>typeof s==='string'):[];t.genreState=u.genreState;t.emotions=Array.isArray(u.emotions)?u.emotions:[];t.emotionState=u.emotionState||'pending'}}
+ ensureGenres();save();render();if(($('songDetails').open||editorOnly)&&editId)editSong(editId);
+ }else if(m.type==='accepted'){playbackPending=false;msg('已交给 HyPlayer：'+m.title)}
+ else if(m.type==='error'){playbackPending=false;msg('播放失败：'+m.message)}
+});
+window.chrome.webview.postMessage({type:'ready'});
+}else $('playlistName').textContent='请从 HyPlayer 的歌单页打开';
+restore();render();choose(selected);if(Object.keys(overrides).length)msg('已恢复本浏览器上次编辑的分类配置');
+})();
+</script></body></html>

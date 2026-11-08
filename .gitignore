@@ -601,4 +601,5 @@ fabric.properties
 NeteaseCloudMusicApi
 *.pfx
 *.pfx
-/HyPlayer/Assets/ThirdPartyIcons
+/Artifacts/
+/MusicAtlasBuild/node_modules/

@@ -356,6 +356,12 @@ public sealed partial class SongListDetail : Page, IDisposable
     }
 
 
+    private void MusicAtlas_Click(object sender, RoutedEventArgs e)
+    {
+        if (playList != null && playList.plid != "-666")
+            Frame.Navigate(typeof(MusicAtlasPage), playList);
+    }
+
     private async void ButtonPlayAll_OnClick(object sender, RoutedEventArgs e)
     {
         if (disposedValue) throw new ObjectDisposedException(nameof(SongListDetail));

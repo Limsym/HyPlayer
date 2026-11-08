@@ -1,3 +1,17 @@
+# HyPlayer Music Atlas · 音乐地图
+
+本 fork 在 HyPlayer 2.1.38 基础上加入歌单音乐地图、曲风 / 气质 / 来源三维度分类和播放页分类编辑。当前发布版本为 **2.1.38.6042 / Windows x64**。
+
+- **[下载安装包](https://github.com/Limsym/HyPlayer/releases/latest)**：下载 `HyPlayer-MusicAtlas-2.1.38.6042-x64.zip`，完整解压后按说明安装。ZIP 包含运行依赖、公开签名证书、完整修改源码，以及可直接使用的 52 首人工分类配置。
+- **[安装、分类迁移与构建说明](README-MUSIC-ATLAS.md)**：现有同身份应用原位更新；首次安装自动载入随附分类，已有分类不覆盖。
+- **[人工分类数据](MusicAtlasData/classifications.json)**：真实的本机人工修正，不包含网易云登录信息或个人歌单列表。
+
+这是非官方完整播放器集成包。登录、播放与会员权限沿用 HyPlayer；首次安装需信任本构建的公开签名证书。`music-atlas` 是本 fork 的功能分支，尚未提交或合并到上游。
+
+以下保留上游项目说明与许可证信息。
+
+---
+
 <h1 align="center">
   <br>
   <img src="https://raw.githubusercontent.com/kengwang/HyPlayer/master/HyPlayer/Assets/icon.png" width="150"/>

@@ -37,6 +37,7 @@ namespace HyPlayer.Controls;
 
 public sealed partial class PlayBar
 {
+    private async void MusicAtlasClassification_Click(object sender, RoutedEventArgs e) => await MusicAtlasSongDialog.ShowCurrentAsync();
     private SolidColorBrush BackgroundElayBrush = new(Colors.Transparent);
     private bool _isSliding = false;
     public PlayMode NowPlayType = PlayMode.DefaultRoll;

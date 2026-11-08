@@ -525,6 +525,8 @@
                 Style="{StaticResource ButtonRevealStyle}">
                 <Button.Flyout>
                     <MenuFlyout>
+                        <MenuFlyoutItem Text="曲目分类" Click="MusicAtlasClassification_Click" AutomationProperties.Name="曲目分类" />
+                        <MenuFlyoutSeparator />
                         <ToggleMenuFlyoutItem
                             Name="ToggleButtonTranslation"
                             HorizontalContentAlignment="Left"
